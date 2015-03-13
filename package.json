@@ -1,0 +1,28 @@
+{
+  "name": "xless",
+  "version": "0.0.1",
+  "description": "less mixins",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/royJang/xless.git"
+  },
+  "keywords": [
+    "mixins"
+  ],
+  "author": "roy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royJang/xless/issues"
+  },
+  "homepage": "https://github.com/royJang/xless",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

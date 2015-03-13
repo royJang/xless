@@ -1,0 +1,31 @@
+@newline: `"\n"`;
+.animation_top(@selector, @name, @pxFrom, @pxTo) {
+  .Keyframe(@pre, @post, @vendor) {
+    @keyframe: ~"@{pre}@@{vendor}keyframes @{name} {@{newline}0%";
+    @{keyframe} {
+      top: @pxFrom;
+      opacity: 0;
+    }
+    100%  {
+      top: @pxTo;
+      opacity: 1;
+    }
+    .Local(){}
+    .Local() when (@post=1) {
+      @local: ~"}@{newline}@{selector}";
+      @{local} {
+        -moz-animation: @name;
+        -webkit-animation: @name;
+        -o-animation: @name;
+        -ms-animation: @name;
+        animation: @name;
+      }
+    }
+    .Local;
+  }
+  .Keyframe(""            , 0,    "-moz-");
+  .Keyframe(~"}@{newline}", 0, "-webkit-");
+  .Keyframe(~"}@{newline}", 0,      "-o-");
+  .Keyframe(~"}@{newline}", 0,     "-ms-");
+  .Keyframe(~"}@{newline}", 1,         "");
+}
