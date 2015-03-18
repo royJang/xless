@@ -1,24 +1,34 @@
 module.exports = function (grunt){
 
+    //'src/reset.less',
+
     grunt.initConfig({
         watch : {
             xless: {
                 files: ['src/**/**.less'],
-                tasks: ['concat']
+                tasks: ['concat:dist']
             },
             test : {
-                files : ['test/test.less'],
-                tasks : ['less']
+                files : ['src/**/**.less','test/test.less'],
+                tasks : ['less:test']
             }
         },
         concat: {
             dist: {
-                src: ['src/reset.less','src/**/**.less'],
+                src: [
+                    'src/reset.less',
+                    'src/mixins/**.less',
+                    'src/resource/**.less',
+                    'src/animation/**.less'
+                ],
                 dest: 'dest/xLess.less'
             }
         },
         less : {
             test : {
+                options:{
+
+                },
                 files: {
                     "test/test.css": "test/test.less"
                 }

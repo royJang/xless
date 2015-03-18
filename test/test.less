@@ -1,8 +1,18 @@
 @import "../dest/xLess";
 
-  .file {
-    width:600px; height:300px; border:1px solid #ccc; margin:100px auto;
-    display: block; border-radius:3px;
-    .animation(move .5s);
-  }
+.list {
 
+  width:260px; margin:100px auto; color:#fff; .font-family(@yahei);
+
+  li {
+    .height(45px); .ta; margin:5px; background:@blue; .border-radius;
+
+    &:nth-child(n){
+      .bounceInDown();
+    }
+
+    &:nth-child(2n){
+      .bounceInUp();
+    }
+  }
+}

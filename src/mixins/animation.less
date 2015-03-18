@@ -28,8 +28,7 @@
   animation-direction: @direction;
 }
 
-.backface-visibility(@visibility){
-  -webkit-backface-visibility: @visibility;
-  -moz-backface-visibility: @visibility;
-  backface-visibility: @visibility;
+.animation-fill-mode (@mode){
+  -webkit-animation-fill-mode:@mode;
+  animation-fill-mode:@mode;
 }
