@@ -1,18 +1,69 @@
 @import "../dest/xLess";
 
+body {
+  .font-family(@yahei); color:#fff; .f12;
+}
+
+.bounce { .bounce() }
+.bounceIn { .bounceIn(); }
+.bounceInDown { .bounceInDown(); }
+.bounceInLeft { .bounceInLeft(); }
+.bounceInRight { .bounceInRight(); }
+.bounceInUp{ .bounceInUp(); }
+.bounceOut { .bounceOut(); }
+.bounceOutDown { .bounceOutDown(); }
+.bounceOutLeft{ .bounceOutLeft(); }
+.bounceOutRight{ .bounceOutRight(); }
+.bounceOutUp { .bounceOutUp(); }
+.fadeIn { .fadeIn() }
+.fadeOut { .fadeOut() }
+.fadeIn{ .fadeIn()  }
+.fadeInDown{ .fadeInDown() }
+.fadeInDownBig{ .fadeInDownBig() }
+.fadeInLeft{ .fadeInLeft() }
+.fadeInLeftBig{ .fadeInLeftBig() }
+.fadeInRight{ .fadeInRight() }
+.fadeInRightBig{ .fadeInRightBig() }
+.fadeInUp{ .fadeInUp() }
+.fadeInUpBig{ .fadeInUpBig() }
+.fadeOut{ .fadeOut() }
+.fadeOutDown{ .fadeOutDown() }
+.fadeOutDownBig{ .fadeOutDownBig() }
+.fadeOutLeft{  .fadeOutLeft() }
+.fadeOutLeftBig{ .fadeOutLeftBig() }
+.fadeOutRight{ .fadeOutRight() }
+.fadeOutRightBig{ .fadeOutRightBig() }
+.fadeOutUp{ .fadeOutUp() }
+.fadeOutUpBig{ .fadeOutUpBig() }
+.flip { .flip() }
+.flipInX { .flipInX() }
+.flipInY { .flipInY() }
+.flipOutX { .flipOutX() }
+.flipOutY { .flipOutY() }
+
+
+.btns {
+
+  .bounceInDown;
+
+  li {
+    .fl; padding:10px 15px; background: @green5; border-left:1px solid #fff; border-bottom:1px solid #fff;
+    cursor: pointer;
+
+    &:hover {
+      background:darken(@green5,3%);
+    }
+  }
+}
+
+
 .list {
 
-  width:260px; margin:100px auto; color:#fff; .font-family(@yahei);
+  width:260px;  height:360px;
+
+  position: absolute; top:0; left:0; right:0; bottom:0; margin:auto;
 
   li {
     .height(45px); .ta; margin:5px; background:@blue; .border-radius;
-
-    &:nth-child(n){
-      .flipOutX();
-    }
-
-    &:nth-child(2n){
-      .flipOutY();
-    }
   }
 }

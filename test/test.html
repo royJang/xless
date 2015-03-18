@@ -7,16 +7,70 @@
 </head>
 <body>
 
-    <ul class="list">
-        <li>google</li>
-        <li>apple</li>
-        <li>mircrosoft</li>
-        <li>facebook</li>
-        <li>twitter</li>
-        <li>tencent</li>
-        <li>alibaba</li>
-        <li>baidu</li>
-    </ul>
+<ul class="btns">
+    <li>bounce</li>
+    <li>bounceIn</li>
+    <li>bounceInDown</li>
+    <li>bounceInLeft</li>
+    <li>bounceInRight</li>
+    <li>bounceInUp</li>
+    <li>bounceOut</li>
+    <li>bounceOutDown</li>
+    <li>bounceOutLeft</li>
+    <li>bounceOutRight</li>
+    <li>bounceOutUp</li>
+    <li>fadeIn</li>
+    <li>fadeInDown</li>
+    <li>fadeInDownBig</li>
+    <li>fadeInLeft</li>
+    <li>fadeInLeftBig</li>
+    <li>fadeInRight</li>
+    <li>fadeInRightBig</li>
+    <li>fadeInUp</li>
+    <li>fadeInUpBig</li>
+    <li>fadeOut</li>
+    <li>fadeOutDown</li>
+    <li>fadeOutDownBig</li>
+    <li>fadeOutLeft</li>
+    <li>fadeOutLeftBig</li>
+    <li>fadeOutRight</li>
+    <li>fadeOutRightBig</li>
+    <li>fadeOutUp</li>
+    <li>fadeOutUpBig</li>
+    <li>flip</li>
+    <li>flipInX</li>
+    <li>flipInY</li>
+    <li>flipOutX</li>
+    <li>flipOutY</li>
+</ul>
 
+<ul class="list">
+    <li>google</li>
+    <li>apple</li>
+    <li>mircrosoft</li>
+    <li>facebook</li>
+    <li>twitter</li>
+    <li>tencent</li>
+    <li>alibaba</li>
+    <li>baidu</li>
+</ul>
+
+<script>
+
+    var slice = Array.prototype.slice,
+        list = document.querySelector(".list"),
+        n = slice.call(list.querySelectorAll("li:nth-child(n)")),
+        n2 = slice.call(list.querySelectorAll("li:nth-child(2n)")),
+        i = 0;
+
+    document.querySelector(".btns").addEventListener("click", function (e){
+        (i % 2 == 0 ? n2 : n ).forEach(function ( el ){
+            el.className = "";
+            el.classList.add( e.target.innerHTML );
+        });
+        i++;
+    });
+
+</script>
 </body>
 </html>
