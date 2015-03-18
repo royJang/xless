@@ -19,7 +19,8 @@ module.exports = function (grunt){
                     'src/reset.less',
                     'src/mixins/**.less',
                     'src/resource/**.less',
-                    'src/animation/**.less'
+                    'src/animation/**.less',
+                    'src/animation/**/**.less'
                 ],
                 dest: 'dest/xLess.less'
             }
