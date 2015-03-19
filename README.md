@@ -108,98 +108,94 @@ ok , Let us start using it
 ### resource
 
     ```html
+    color ( files )
 
-        color ( files )
-
-        fonts
-            size : f1 - f32  as font-size:1px - font-size 32px
-            family :
-                @yahei
-                @heiTi
-                @kaiTi
-                @songTi
-                @fangSong
-
+    fonts
+        size : f1 - f32  as font-size:1px - font-size 32px
+        family :
+            @yahei
+            @heiTi
+            @kaiTi
+            @songTi
+            @fangSong
     ```
 
 ### animation
 
     ```html
-
-        *bounce
-        *flash
-        *pulse
-        *rubberBand
-        *shake
-        *swing
-        *tada
-        *wobble
-        *bounceIn
-        *bounceInDown
-        *bounceInLeft
-        *bounceInRight
-        *bounceInUp
-        *bounceOut
-        *bounceOutDown
-        *bounceOutLeft
-        *bounceOutRight
-        *bounceOutUp
-        *fadeIn
-        *fadeInDown
-        *fadeInDownBig
-        *fadeInLeft
-        *fadeInLeftBig
-        *fadeInRight
-        *fadeInRightBig
-        *fadeInUp
-        *fadeInUpBig
-        *fadeOut
-        *fadeOutDown
-        *fadeOutDownBig
-        *fadeOutLeft
-        *fadeOutLeftBig
-        *fadeOutRight
-        *fadeOutRightBig
-        *fadeOutUp
-        *fadeOutUpBig
-        *flipInX
-        *flipInY
-        *flipOutX
-        *flipOutY
-        *lightSpeedIn
-        *lightSpeedOut
-        *rotateIn
-        *rotateInDownLeft
-        *rotateInDownRight
-        *rotateInUpLeft
-        *rotateInUpRight
-        *rotateOut
-        *rotateOutDownLeft
-        *rotateOutDownRight
-        *rotateOutUpLeft
-        *rotateOutUpRight
-        *hinge
-        *rollIn
-        *rollOut
-        *zoomIn
-        *zoomInDown
-        *zoomInLeft
-        *zoomInRight
-        *zoomInUp
-        *zoomOut
-        *zoomOutDown
-        *zoomOutLeft
-        *zoomOutRight
-        *zoomOutUp
-        *slideInDown
-        *slideInLeft
-        *slideInRight
-        *slideInUp
-        *slideOutDown
-        *slideOutLeft
-        *slideOutRight
-        *slideOutUp
-
+    *bounce
+    *flash
+    *pulse
+    *rubberBand
+    *shake
+    *swing
+    *tada
+    *wobble
+    *bounceIn
+    *bounceInDown
+    *bounceInLeft
+    *bounceInRight
+    *bounceInUp
+    *bounceOut
+    *bounceOutDown
+    *bounceOutLeft
+    *bounceOutRight
+    *bounceOutUp
+    *fadeIn
+    *fadeInDown
+    *fadeInDownBig
+    *fadeInLeft
+    *fadeInLeftBig
+    *fadeInRight
+    *fadeInRightBig
+    *fadeInUp
+    *fadeInUpBig
+    *fadeOut
+    *fadeOutDown
+    *fadeOutDownBig
+    *fadeOutLeft
+    *fadeOutLeftBig
+    *fadeOutRight
+    *fadeOutRightBig
+    *fadeOutUp
+    *fadeOutUpBig
+    *flipInX
+    *flipInY
+    *flipOutX
+    *flipOutY
+    *lightSpeedIn
+    *lightSpeedOut
+    *rotateIn
+    *rotateInDownLeft
+    *rotateInDownRight
+    *rotateInUpLeft
+    *rotateInUpRight
+    *rotateOut
+    *rotateOutDownLeft
+    *rotateOutDownRight
+    *rotateOutUpLeft
+    *rotateOutUpRight
+    *hinge
+    *rollIn
+    *rollOut
+    *zoomIn
+    *zoomInDown
+    *zoomInLeft
+    *zoomInRight
+    *zoomInUp
+    *zoomOut
+    *zoomOutDown
+    *zoomOutLeft
+    *zoomOutRight
+    *zoomOutUp
+    *slideInDown
+    *slideInLeft
+    *slideInRight
+    *slideInUp
+    *slideOutDown
+    *slideOutLeft
+    *slideOutRight
+    *slideOutUp
     ```
 
 
