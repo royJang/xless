@@ -27,9 +27,6 @@ module.exports = function (grunt){
         },
         less : {
             test : {
-                options:{
-
-                },
                 files: {
                     "test/test.css": "test/test.less"
                 }

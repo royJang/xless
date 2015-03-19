@@ -42,6 +42,39 @@
     <li>flipInY</li>
     <li>flipOutX</li>
     <li>flipOutY</li>
+    <li>lightSpeedIn</li>
+    <li>lightSpeedOut</li>
+    <li>rotateIn</li>
+    <li>rotateInDownLeft</li>
+    <li>rotateInDownRight</li>
+    <li>rotateInUpLeft</li>
+    <li>rotateInUpRight</li>
+    <li>rotateOut</li>
+    <li>rotateOutDownLeft</li>
+    <li>rotateOutDownRight</li>
+    <li>rotateOutUpLeft</li>
+    <li>rotateOutUpRight</li>
+    <li>hinge</li>
+    <li>rollIn</li>
+    <li>rollOut</li>
+    <li>zoomIn</li>
+    <li>zoomInDown</li>
+    <li>zoomInLeft</li>
+    <li>zoomInRight</li>
+    <li>zoomInUp</li>
+    <li>zoomOut</li>
+    <li>zoomOutDown</li>
+    <li>zoomOutLeft</li>
+    <li>zoomOutRight</li>
+    <li>zoomOutUp</li>
+    <li>slideInDown</li>
+    <li>slideInLeft</li>
+    <li>slideInRight</li>
+    <li>slideInUp</li>
+    <li>slideOutDown</li>
+    <li>slideOutLeft</li>
+    <li>slideOutRight</li>
+    <li>slideOutUp</li>
 </ul>
 
 <ul class="list">
@@ -55,20 +88,23 @@
     <li>baidu</li>
 </ul>
 
+<div class="square">
+
+</div>
+
 <script>
 
     var slice = Array.prototype.slice,
         list = document.querySelector(".list"),
-        n = slice.call(list.querySelectorAll("li:nth-child(n)")),
-        n2 = slice.call(list.querySelectorAll("li:nth-child(2n)")),
-        i = 0;
+        n = slice.call(list.children),
+        n2 = slice.call(list.querySelectorAll("li:nth-child(2n)"));
 
     document.querySelector(".btns").addEventListener("click", function (e){
-        (i % 2 == 0 ? n2 : n ).forEach(function ( el ){
+        (Math.ceil(Math.random() * 10) % 2 == 0 ? n : n2)
+                .forEach(function ( el ){
             el.className = "";
             el.classList.add( e.target.innerHTML );
         });
-        i++;
     });
 
 </script>
