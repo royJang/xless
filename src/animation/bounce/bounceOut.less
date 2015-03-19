@@ -1,34 +1,40 @@
 .bounceOut (){
 
-  @keyframes bounceOut {
+  @-webkit-keyframes bounceOut {
     20% {
-      .transform(scale3d(.9, .9, .9));
+      -webkit-transform: scale3d(.9, .9, .9);
+      transform: scale3d(.9, .9, .9);
     }
 
     50%, 55% {
       opacity: 1;
-      .transform(scale3d(1.1, 1.1, 1.1));
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
     }
 
     100% {
       opacity: 0;
-      .transform(scale3d(.3, .3, .3));
+      -webkit-transform: scale3d(.3, .3, .3);
+      transform: scale3d(.3, .3, .3);
     }
   }
 
-  @-webkit-keyframes bounceOut {
+  @keyframes bounceOut {
     20% {
-      .transform(scale3d(.9, .9, .9));
+      -webkit-transform: scale3d(.9, .9, .9);
+      transform: scale3d(.9, .9, .9);
     }
 
     50%, 55% {
       opacity: 1;
-      .transform(scale3d(1.1, 1.1, 1.1));
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
     }
 
     100% {
       opacity: 0;
-      .transform(scale3d(.3, .3, .3));
+      -webkit-transform: scale3d(.3, .3, .3);
+      transform: scale3d(.3, .3, .3);
     }
   }
 
