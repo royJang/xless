@@ -107,7 +107,6 @@ ok , Let us start using it
 
 ### resource
 
-    ```html
     color ( files )
 
     fonts
@@ -118,11 +117,9 @@ ok , Let us start using it
             @kaiTi
             @songTi
             @fangSong
-    ```
 
 ### animation
 
-    ```html
     *bounce
     *flash
     *pulse
@@ -196,7 +193,6 @@ ok , Let us start using it
     *slideOutLeft
     *slideOutRight
     *slideOutUp
-    ```
 
 
 
