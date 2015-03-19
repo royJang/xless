@@ -194,6 +194,7 @@ ok , Let us start using it
         slideOutRight
         slideOutUp
 
+## Questions?
 
-
+If you have any questions, please feel free to ask on the royjang.github.com/xless/issue
 
