@@ -1,0 +1,18 @@
+.circularEaseOut (@origin:100%){
+  @-webkit-keyframes circularEaseOut {
+    to {
+      -webkit-transform: rotateZ(1turn);
+    }
+  }
+  @keyframes circularEaseOut {
+    to {
+      transform: rotateZ(1turn);
+    }
+  }
+
+  &:extend(.animated);
+  &:extend(.infinite);
+  .animation-timing-function(ease-out);
+  .animation-name(circularEaseOut);
+  .transform-origin(@origin center);
+}

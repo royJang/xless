@@ -32,3 +32,10 @@
   -webkit-animation-fill-mode:@mode;
   animation-fill-mode:@mode;
 }
+
+.animation-play-state (@mode){
+  //chrome,safari
+  -webkit-animation-play-state: @mode;
+  //ie10,ff,opera
+  animation-play-state: @mode;
+}

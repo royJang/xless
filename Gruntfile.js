@@ -20,7 +20,9 @@ module.exports = function (grunt){
                     'src/mixins/**.less',
                     'src/resource/**.less',
                     'src/animation/**.less',
-                    'src/animation/**/**.less'
+                    'src/animation/**/**.less',
+                    'src/components/**.less',
+                    'src/components/**/**.less'
                 ],
                 dest: 'dest/xLess.less'
             }

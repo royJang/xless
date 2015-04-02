@@ -3,81 +3,10 @@
 body {
   .font-family(@yahei); color:#fff; .f12;
 }
-.pulse { .pulse() }
-.rubberBand  { .rubberBand () }
-.shake { .shake () }
-.swing { .swing () }
-.tada { .tada() }
-.wobble { .wobble() }
-.bounce { .bounce() }
-.bounceIn { .bounceIn(); }
-.bounceInDown { .bounceInDown(); }
-.bounceInLeft { .bounceInLeft(); }
-.bounceInRight { .bounceInRight(); }
-.bounceInUp{ .bounceInUp(); }
-.bounceOut { .bounceOut(); }
-.bounceOutDown { .bounceOutDown(); }
-.bounceOutLeft{ .bounceOutLeft(); }
-.bounceOutRight{ .bounceOutRight(); }
-.bounceOutUp { .bounceOutUp(); }
-.fadeIn { .fadeIn() }
-.fadeOut { .fadeOut() }
-.fadeIn{ .fadeIn()  }
-.fadeInDown{ .fadeInDown() }
-.fadeInDownBig{ .fadeInDownBig() }
-.fadeInLeft{ .fadeInLeft() }
-.fadeInLeftBig{ .fadeInLeftBig() }
-.fadeInRight{ .fadeInRight() }
-.fadeInRightBig{ .fadeInRightBig() }
-.fadeInUp{ .fadeInUp() }
-.fadeInUpBig{ .fadeInUpBig() }
-.fadeOut{ .fadeOut() }
-.fadeOutDown{ .fadeOutDown() }
-.fadeOutDownBig{ .fadeOutDownBig() }
-.fadeOutLeft{  .fadeOutLeft() }
-.fadeOutLeftBig{ .fadeOutLeftBig() }
-.fadeOutRight{ .fadeOutRight() }
-.fadeOutRightBig{ .fadeOutRightBig() }
-.fadeOutUp{ .fadeOutUp() }
-.fadeOutUpBig{ .fadeOutUpBig() }
-.flip { .flip() }
-.flipInX { .flipInX() }
-.flipInY { .flipInY() }
-.flipOutX { .flipOutX() }
-.flipOutY { .flipOutY() }
-.lightSpeedIn { .lightSpeedIn () }
-.lightSpeedOut { .lightSpeedOut() }
-.rotateIn { .rotateIn() }
-.rotateInDownLeft { .rotateInDownLeft() }
-.rotateInDownRight { .rotateInDownRight() }
-.rotateInUpLeft { .rotateInUpLeft() }
-.rotateInUpRight { .rotateInUpRight() }
-.rotateOut { .rotateOut() }
-.rotateOutDownLeft { .rotateOutDownLeft() }
-.rotateOutDownRight { .rotateOutDownRight() }
-.rotateOutUpLeft { .rotateOutUpLeft() }
-.rotateOutUpRight { .rotateOutUpRight() }
-.hinge  { .hinge() }
-.rollIn { .rollIn() }
-.rollOut { .rollOut() }
-.zoomIn { .zoomIn() }
-.zoomInDown {  .zoomInDown()  }
-.zoomInLeft { .zoomInLeft() }
-.zoomInRight { .zoomInRight() }
-.zoomInUp { .zoomInUp() }
-.zoomOut { .zoomOut() }
-.zoomOutDown { .zoomOutDown() }
-.zoomOutLeft { .zoomOutLeft() }
-.zoomOutRight { .zoomOutRight() }
-.zoomOutUp { .zoomOutUp() }
-.slideInDown { .slideInDown() }
-.slideInLeft { .slideInLeft() }
-.slideInRight { .slideInRight () }
-.slideInUp { .slideInUp() }
-.slideOutDown{ .slideOutDown () }
-.slideOutLeft { .slideOutLeft() }
-.slideOutRight { .slideOutRight() }
-.slideOutUp { .slideOutUp() }
+
+.reset();
+
+@import "data/effect.less";
 
 .btns {
 
@@ -91,6 +20,11 @@ body {
       background:darken(@green5,3%);
     }
   }
+}
+
+.circle {
+  width:100px; height:100px; background: rgba(0,0,0,.7); border-radius: 50%; top:0; left:200px; bottom:0; .posf;
+  margin:auto;
 }
 
 .list {
