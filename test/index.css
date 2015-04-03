@@ -3270,29 +3270,29 @@ input[type=button] {
   zoom: 1;
 }
 body {
-  font-family: "KaiTi" "Microsoft YaHei";
+  font-family: "KaiTi", "Microsoft YaHei";
   background-color: #e3e3e3;
 }
-nav.title {
+nav .title {
   position: fixed;
   right: 200px;
   top: 0;
-  font-family: cursive;
+  font-family: fantasy,cursive;
   font-size: 80px;
   letter-spacing: 3px;
   width: 200px;
 }
-nav.title span {
+nav .title span {
   display: none;
   position: relative;
   width: 30px;
 }
-nav.title span:nth-child(1) {
+nav .title span:nth-child(1) {
   color: #009966;
 }
 main {
   min-width: 1024px;
-  margin: 100px auto;
+  margin: 111px auto;
   width: 75%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3305,7 +3305,7 @@ main {
 }
 .left-nav {
   width: 20%;
-  height: 500px;
+  height: 600px;
   overflow: auto;
 }
 .left-nav .effect-list {
@@ -3326,7 +3326,7 @@ main {
 }
 .right-nav {
   width: 75%;
-  height: 500px;
+  height: 600px;
 }
 .right-nav .stage {
   position: absolute;

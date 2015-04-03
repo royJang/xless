@@ -4,11 +4,11 @@
 .reset();
 
 body {
-  font-family:@kaiTi @yahei; background-color:#e3e3e3;
+  font-family:@kaiTi,@yahei; background-color:#e3e3e3;
 }
 
-nav.title {
-  position: fixed;right:200px; top:0; font-family: cursive;
+nav .title {
+  position: fixed;right:200px; top:0; font-family:fantasy,cursive;
   font-size:80px; letter-spacing: 3px; width:200px;
   span {
     display: none; position: relative; width:30px;
@@ -19,7 +19,7 @@ nav.title {
 }
 
 main {
-  min-width:1024px; margin:100px auto; width:75%; .box-sizing(border-box);
+  min-width:1024px; margin:111px auto; width:75%; .box-sizing(border-box);
 }
 
 .left-nav,.right-nav {
@@ -27,7 +27,7 @@ main {
 }
 
 .left-nav {
-  width:20%; height:500px; .of(auto);
+  width:20%; height:600px; .of(auto);
   .effect-list {
     .posa; width:100%;
     li {
@@ -43,7 +43,7 @@ main {
 }
 
 .right-nav {
-  width:75%; height:500px;
+  width:75%; height:600px;
   .stage {
     .posa; width:100%;
     .cube {
