@@ -1,0 +1,31 @@
+.slideOutRight (){
+
+  @-webkit-keyframes slideOutRight {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    100% {
+      visibility: hidden;
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes slideOutRight {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    100% {
+      visibility: hidden;
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+  }
+
+  &:extend(.animated);
+  .animation-name(slideOutRight);
+}

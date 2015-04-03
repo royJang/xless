@@ -1,0 +1,18 @@
+.circularEaseIn (@origin:100%){
+  @-webkit-keyframes circularEaseIn {
+    to {
+      -webkit-transform: rotateZ(1turn);
+    }
+  }
+  @keyframes circularEaseIn {
+    to {
+      transform: rotateZ(1turn);
+    }
+  }
+
+  &:extend(.animated);
+  &:extend(.infinite);
+  .animation-timing-function(ease-in);
+  .animation-name(circularEaseIn);
+  .transform-origin(@origin center);
+}

@@ -1,0 +1,39 @@
+@import "../dest/xLess";
+
+body {
+  .font-family(@yahei); color:#fff; .f12;
+}
+
+.reset();
+
+@import "data/effect.less";
+
+.btns {
+
+  .bounceInDown;
+
+  li {
+    .fl; padding:10px 15px; background: @green5; border-left:1px solid #fff; border-bottom:1px solid #fff;
+    cursor: pointer;
+
+    &:hover {
+      background:darken(@green5,3%);
+    }
+  }
+}
+
+.circle {
+  width:100px; height:100px; background: rgba(0,0,0,.7); border-radius: 50%; top:0; left:200px; bottom:0; .posf;
+  margin:auto;
+}
+
+.list {
+
+  width:260px;  height:360px;
+
+  position: absolute; top:0; left:0; right:0; bottom:0; margin:auto;
+
+  li {
+    .height(45px); .ta; margin:5px; background:@blue; .border-radius;
+  }
+}

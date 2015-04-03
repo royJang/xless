@@ -1,0 +1,17 @@
+.circular (@origin:100%){
+    @-webkit-keyframes circular {
+      to {
+        -webkit-transform: rotateZ(1turn);
+      }
+    }
+    @keyframes circular {
+      to {
+        transform:rotateZ(1turn);
+      }
+    }
+    &:extend(.animated);
+    &:extend(.infinite);
+    .animation-timing-function(linear);
+    .animation-name(circular);
+    .transform-origin(@origin center);
+}

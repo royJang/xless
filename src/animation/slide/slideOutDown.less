@@ -1,0 +1,31 @@
+.slideOutDown  (){
+
+  @-webkit-keyframes slideOutDown {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    100% {
+      visibility: hidden;
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes slideOutDown {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    100% {
+      visibility: hidden;
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+  }
+
+  &:extend(.animated);
+  .animation-name(slideOutDown);
+}
