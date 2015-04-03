@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>xLess</title>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<nav class="title"><span>x</span>Less</nav>
+<main>
+    <div class="left-nav">
+        <ul class="effect-list"></ul>
+    </div>
+    <div class="right-nav">
+        <div class="stage">
+            <div class="cube cube1"></div>
+            <div class="cube cube2"></div>
+            <div class="cube cube3"></div>
+            <div class="cube cube4"></div>
+            <div class="cube cube5"></div>
+        </div>
+    </div>
+</main>
+<script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+<script src="data/effect.js"></script>
+<script>
+    (function(){
+        var arr = [];
+        effect_list.forEach(function ( el ){
+            arr.push(
+                    "<li effect-name="+ el +"><span>" + el + "</span></li>"
+            );
+        });
+        $(".effect-list").html(arr.join(""));
+    })();
+
+    var cube = $(".stage").find("div.cube");
+    var i = 0;
+    $(".effect-list").find("li").on("click", function (){
+        var val = $(this).attr("effect-name");
+        if( i > 4) i = 0;
+        cube.eq(i).attr("class","cube cube"+ (i+1));
+        cube.eq(i).addClass(val);
+        i++;
+    });
+
+
+</script>
+</body>
+</html>

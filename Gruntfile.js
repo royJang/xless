@@ -11,6 +11,10 @@ module.exports = function (grunt){
             test : {
                 files : ['src/**/**.less','test/test.less'],
                 tasks : ['less:test']
+            },
+            homePage : {
+                files : ['src/**/**.less', 'test/index.less'],
+                tasks : ['less:homePage']
             }
         },
         concat: {
@@ -31,6 +35,11 @@ module.exports = function (grunt){
             test : {
                 files: {
                     "test/test.css": "test/test.less"
+                }
+            },
+            homePage : {
+                files : {
+                    "test/index.css" : "test/index.less"
                 }
             }
         }

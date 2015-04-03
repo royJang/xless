@@ -40,11 +40,15 @@ list.files.forEach(function (el,i){
     result.push(r);
 })
 
-fs.writeFile(path.join(__dirname, 'effect.json'), JSON.stringify(result), function (err) {
+fs.writeFile(path.join(__dirname, 'effect.js') ,JSON.stringify(result), function (err) {
     if (err) throw err;
     console.log("Export effect.json Success!");
 });
 
+fs.writeFile(path.join(__dirname, 'effect.js'), "var effect_list = " + JSON.stringify(result), function (err) {
+    if (err) throw err;
+    console.log("Export effect.js Success!");
+});
 
 var lessResult = "";
 result.forEach(function (el,i){
