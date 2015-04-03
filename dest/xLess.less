@@ -1271,6 +1271,23 @@
     .animation-name(circular);
     .transform-origin(@origin center);
 }
+.circularAnti (@origin:100%){
+  @-webkit-keyframes circularAnti {
+    from {
+      -webkit-transform: rotateZ(1turn);
+    }
+  }
+  @keyframes circularAnti {
+    from {
+      transform:rotateZ(1turn);
+    }
+  }
+  &:extend(.animated);
+  &:extend(.infinite);
+  .animation-timing-function(linear);
+  .animation-name(circularAnti);
+  .transform-origin(@origin center);
+}
 .circularEaseIn (@origin:100%){
   @-webkit-keyframes circularEaseIn {
     to {

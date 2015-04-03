@@ -11,6 +11,7 @@
 .bounceOutRight,
 .bounceOutUp,
 .circular,
+.circularAnti,
 .circularEaseIn,
 .circularEaseOut,
 .fadeIn,
@@ -83,6 +84,7 @@
 }
 .infinite,
 .circular,
+.circularAnti,
 .circularEaseIn,
 .circularEaseOut {
   -webkit-animation-iteration-count: infinite;
@@ -709,6 +711,26 @@
 }
 @keyframes circular {
   to {
+    transform: rotateZ(1turn);
+  }
+}
+.circularAnti {
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: circularAnti;
+  animation-name: circularAnti;
+  -webkit-transform-origin: 100% center;
+  -moz-transform-origin: 100% center;
+  -ms-transform-origin: 100% center;
+  transform-origin: 100% center;
+}
+@-webkit-keyframes circularAnti {
+  from {
+    -webkit-transform: rotateZ(1turn);
+  }
+}
+@keyframes circularAnti {
+  from {
     transform: rotateZ(1turn);
   }
 }
@@ -3258,8 +3280,14 @@ nav.title {
   font-family: cursive;
   font-size: 80px;
   letter-spacing: 3px;
+  width: 200px;
 }
 nav.title span {
+  display: none;
+  position: relative;
+  width: 30px;
+}
+nav.title span:nth-child(1) {
   color: #009966;
 }
 main {
@@ -3309,6 +3337,7 @@ main {
   height: 100px;
   border-radius: 50%;
   position: absolute;
+  display: none;
 }
 .right-nav .stage .cube1 {
   background: #ff0033;
