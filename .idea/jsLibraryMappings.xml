@@ -2,6 +2,5 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{xless node_modules}" />
-    <file url="file://$PROJECT_DIR$/test/data/GET_EFFECT.js" libraries="{Node.js Globals}" />
   </component>
 </project>
