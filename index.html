@@ -6,9 +6,10 @@
     <link href="test/index.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<div style="position:fixed;top:0;left:0;">
-    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=royJang&amp;repo=xless&amp;type=watch&amp;count=false" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=royJang&amp;repo=xless&amp;type=fork&amp;count=false" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+<div class="github">
+     <a href="https://github.com/royJang/xless">
+     <button class="forkMe">Fork me on Github</button>
+     </a>
 </div>
 <nav class="nav">
     <div class="title"><span>x</span><span>L</span><span>e</span><span>s</span><span>s</span></div>
@@ -18,6 +19,22 @@
         <ul class="effect-list"></ul>
     </div>
     <div class="right-nav">
+        <div class="compatibilityTable">
+            <ul class="browser">
+                <li>Chrome</li>
+                <li>Internet Explorer</li>
+                <li>Firefox</li>
+                <li>Safari</li>
+                <li>Opera</li>
+            </ul>
+            <ul class="browserCompatibility">
+                <li class="chrome">/</li>
+                <li class="ie">/</li>
+                <li class="ff">/</li>
+                <li class="safari">/</li>
+                <li class="opera">/</li>
+            </ul>
+        </div>
         <div class="stage">
             <div class="cube cube1"></div>
             <div class="cube cube2"></div>
@@ -28,11 +45,12 @@
     </div>
 </main>
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
-<script src="test/data/effect.js"></script>
+<script src="test/data/effectExplain.js"></script>
 <script>
     (function(){
         var arr = [];
-        effect_list.forEach(function ( el ){
+
+        Object.keys(effect_list).forEach(function ( el ){
             arr.push(
                 "<li effect-name="+ el +"><span>" + el + "</span></li>"
             );
@@ -86,11 +104,31 @@
     fb("zoomInLeft","zoomInRight","zoomInDown");
     fb2("","","");
 
+    var bc = $(".browserCompatibility");
+    var chrome = bc.find(".chrome"),
+        ie = bc.find(".ie"),
+        ff = bc.find(".ff"),
+        safari = bc.find(".safari"),
+        opera = bc.find(".opera");
+
     $(".effect-list").find("li").on("click", function (){
         var val = $(this).attr("effect-name");
         if( i > max) i = 0;
         cube.eq(i).attr("class","cube cube"+ (i+1));
         cube.eq(i).addClass(val);
+        var cbl = effect_list[val].compatibility;
+
+        if( cbl ){
+            ie.html( cbl.ie || "10+" );
+            chrome.html( cbl.chrome || "ok" );
+            ff.html( cbl.ff || "ok" );
+            safari.html( cbl.safari || "ok" );
+            opera.html( cbl.opera || "ok" );
+        }else{
+            bc.find("li").html("ok");
+            bc.find("li.ie").html("10+");
+        }
+
         i++;
     });
 

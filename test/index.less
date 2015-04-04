@@ -7,14 +7,23 @@ body {
   font-family:@kaiTi,@yahei; background-color:#e3e3e3; .of(hidden);
 }
 
+.github{
+  .posf; top:5px; left:5px;
+  .forkMe{
+    background:#eee url(data/favicon.png) 2px no-repeat;
+    border:1px solid #ccc; padding:5px 7px 5px 25px; .border-radius(3px);
+    outline: none; background-size: 18px;
+  }
+}
+
 nav .title {
   position: fixed;right:200px; top:0; font-family:cursive;
-  font-size:80px; letter-spacing: 3px; width:200px;
+  font-size:80px; letter-spacing: 3px; width:200px; z-index: 999;
   span {
     display: none; position: relative; width:30px;
   }
   span:nth-child(1) {
-    color:@green5;
+    color:@orange;
   }
 }
 
@@ -44,6 +53,34 @@ main {
 
 .right-nav {
   width:75%; height:550px;
+  .compatibilityTable {
+    .posa; right:0; top:0;
+    .browser {
+    }
+    .browser {
+      li {
+        color:@green5;
+      }
+    }
+    .browserCompatibility {
+      li{
+        color:@green5;
+      }
+    }
+    .browser,.browserCompatibility {
+      li {
+        display: inline-block; .ta; padding:7px; width:60px; border-left:1px solid #ddd;
+        &:nth-child(1){
+          width:80px;
+        }
+        &:nth-child(2){
+          width:140px;
+        }
+        &:nth-child(5){
+        }
+      }
+    }
+  }
   .stage {
     .posa; width:100%;
     .cube {
