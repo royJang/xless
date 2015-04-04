@@ -3272,6 +3272,7 @@ input[type=button] {
 body {
   font-family: "KaiTi", "Microsoft YaHei";
   background-color: #e3e3e3;
+  overflow: hidden;
 }
 nav .title {
   position: fixed;
@@ -3305,7 +3306,7 @@ main {
 }
 .left-nav {
   width: 20%;
-  height: 600px;
+  height: 550px;
   overflow: auto;
 }
 .left-nav .effect-list {
@@ -3326,7 +3327,7 @@ main {
 }
 .right-nav {
   width: 75%;
-  height: 600px;
+  height: 550px;
 }
 .right-nav .stage {
   position: absolute;
