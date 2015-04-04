@@ -38,9 +38,9 @@ list.files.forEach(function (el,i){
     if( exclude.indexOf(r) > -1 ) return;
 
     result.push(r);
-})
+});
 
-fs.writeFile(path.join(__dirname, 'effect.js') ,JSON.stringify(result), function (err) {
+fs.writeFile(path.join(__dirname, 'effect.json') ,JSON.stringify(result), function (err) {
     if (err) throw err;
     console.log("Export effect.json Success!");
 });
