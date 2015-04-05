@@ -1,17 +1,4 @@
 .reset (){
-  /*
-	HTML5 Reset :: style.css
-	----------------------------------------------------------
-	We have learned much from/been inspired by/taken code where offered from:
-
-	Eric Meyer					:: http://meyerweb.com
-	HTML5 Doctor				:: http://html5doctor.com
-	and the HTML5 Boilerplate	:: http://html5boilerplate.com
-
--------------------------------------------------------------------------------*/
-
-  /* Let's default this puppy out
-  -------------------------------------------------------------------------------*/
 
   html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
     margin: 0;
@@ -117,8 +104,10 @@
   button, input, select, textarea {margin: 0;}
 
   /* make buttons play nice in IE */
+  /* remove ios default style */
+  /* @author : roy, time:2015-4-5 */
   button,
-  input[type=button] {width: auto; overflow: visible;}
+  input[type=button] {width: auto; overflow: visible; -webkit-appearance: none; outline: none; }
 
   /* scale images in IE7 more attractively */
   .ie7 img {-ms-interpolation-mode: bicubic;}
