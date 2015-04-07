@@ -121,18 +121,6 @@ body {
   color: #fff;
   font-size: 12px;
 }
-/*
-	HTML5 Reset :: style.css
-	----------------------------------------------------------
-	We have learned much from/been inspired by/taken code where offered from:
-
-	Eric Meyer					:: http://meyerweb.com
-	HTML5 Doctor				:: http://html5doctor.com
-	and the HTML5 Boilerplate	:: http://html5boilerplate.com
-
--------------------------------------------------------------------------------*/
-/* Let's default this puppy out
-  -------------------------------------------------------------------------------*/
 html,
 body,
 body div,
@@ -375,10 +363,14 @@ textarea {
   margin: 0;
 }
 /* make buttons play nice in IE */
+/* remove ios default style */
+/* @author : roy, time:2015-4-5 */
 button,
 input[type=button] {
   width: auto;
   overflow: visible;
+  -webkit-appearance: none;
+  outline: none;
 }
 /* scale images in IE7 more attractively */
 .ie7 img {

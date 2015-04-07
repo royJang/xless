@@ -2976,18 +2976,6 @@
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
-/*
-	HTML5 Reset :: style.css
-	----------------------------------------------------------
-	We have learned much from/been inspired by/taken code where offered from:
-
-	Eric Meyer					:: http://meyerweb.com
-	HTML5 Doctor				:: http://html5doctor.com
-	and the HTML5 Boilerplate	:: http://html5boilerplate.com
-
--------------------------------------------------------------------------------*/
-/* Let's default this puppy out
-  -------------------------------------------------------------------------------*/
 html,
 body,
 body div,
@@ -3230,10 +3218,14 @@ textarea {
   margin: 0;
 }
 /* make buttons play nice in IE */
+/* remove ios default style */
+/* @author : roy, time:2015-4-5 */
 button,
 input[type=button] {
   width: auto;
   overflow: visible;
+  -webkit-appearance: none;
+  outline: none;
 }
 /* scale images in IE7 more attractively */
 .ie7 img {
@@ -3291,7 +3283,7 @@ nav .title span {
   width: 30px;
 }
 nav .title span:nth-child(1) {
-  color: #ff6600;
+  color: #dd4c37;
 }
 main {
   min-width: 1024px;
