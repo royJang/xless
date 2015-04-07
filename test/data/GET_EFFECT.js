@@ -124,12 +124,14 @@ components.forEach(function (el,i){
 //components format
 var componentsBegin = "var component_list = { \n";
 var componentStr = "";
+var cal = componentsArr.length;
 componentsArr.forEach(function (el,i){
     componentStr += "    " + el.name;
     componentStr += ":{\n";
     componentStr += "        compatibility : " + el.compatibility + ",\n";
     componentStr += "        template : \'" + el.template + "\'\n";
-    componentStr += "    },\n";
+    componentStr += "    }";
+    componentStr += ((cal == (i + 1)) ? "" : ",") + "\n";
 });
 componentsEnd = "}; \n";
 
