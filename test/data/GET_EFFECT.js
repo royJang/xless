@@ -19,14 +19,25 @@ function scanFolder(path){
                     var $start = $file.indexOf("<compatibility>"),
                         $end = $file.indexOf("</compatibility>");
 
-                    var $com = null;
+                    //读取每个文件的模版文件
+                    var $tempStart = $file.indexOf("<template>"),
+                        $tempEnd = $file.indexOf("</template>");
+
+
+                    var $com = null,
+                        $temp = null;
 
                     if( $start > -1 && $end > -1 ){
                         $com = $file.slice($start+15,$end);
                     }
 
+                    if( $tempStart > -1 && $tempEnd > -1 ){
+                        $temp = $file.slice($tempStart+10,$tempEnd);
+                    }
+
                     fileList.push({
                        path : tmpPath,      //文件名
+                       template : $temp,    //模版文件
                        compatibility : $com //兼容性情况
                     });
                 }
@@ -88,3 +99,67 @@ fs.writeFile(path.join(__dirname, 'effectExplain.js'), effectExplain, function (
     if (err) throw err;
     console.log("Export effectExplain.js Success!");
 });
+
+var components = scanFolder("../../src/components").files;
+var componentsArr = [];
+
+components.forEach(function (el,i){
+    var b = el.path.search(/\/\w+\.html/);
+    if( b > -1 ){
+
+        var $template = el.template && (function (){
+               return el.template.replace(/(\s+?<)|(>\s+?<)|(>\s+?)/g, function (m,a1,a2,a3){
+                    return a1 ? "<" : a2 ? "><" : ">";
+                });
+            })();
+
+        componentsArr.push({
+            "name" : el.path.slice(b+1,-5),
+            "compatibility" : el.compatibility,
+            "template" : $template
+        });
+    }
+});
+
+//components format
+var componentsBegin = "var component_list = { \n";
+var componentStr = "";
+componentsArr.forEach(function (el,i){
+    componentStr += "    " + el.name;
+    componentStr += ":{\n";
+    componentStr += "        compatibility : " + el.compatibility + ",\n";
+    componentStr += "        template : \'" + el.template + "\'\n";
+    componentStr += "    },\n";
+});
+componentsEnd = "}; \n";
+
+var componentsResult = componentsBegin + componentStr + componentsEnd;
+
+fs.writeFile(path.join(__dirname, "components.js"), componentsResult, function (err){
+    if (err) throw err;
+    console.log("Export components.js Success!");
+});
+
+//components less
+var componentsLess = "";
+
+componentsArr.forEach(function (el){
+    componentsLess += ".xless-" + el.name + "{\n";
+    componentsLess += "    .xless-" + el.name + "()\n";
+    componentsLess += "}\n";
+});
+
+fs.writeFile(path.join(__dirname, "components.less"), componentsLess, function (err){
+    if (err) throw err;
+    console.log("Export components.less Success!");
+});
+
+
+
+
+
+
+
+
+
+

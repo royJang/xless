@@ -1,5 +1,6 @@
 @import "../dest/xLess";
 @import "data/effect";
+@import "data/components";
 
 .reset();
 
@@ -45,19 +46,23 @@ main {
   min-width:1024px; margin:111px auto; width:75%; .box-sizing(border-box);
 }
 
+.gh-components {
+  display: none;
+}
+
 .left-nav,.right-nav {
   display: inline-block; .posr;
 }
 
 .left-nav {
   width:20%; height:550px; .of(auto);
-  .effect-list {
+  .effect-list,.components-list {
     .posa; width:100%;
     li {
       padding:8px 0;
       span {
         padding:8px 10px; border-radius: 3px; cursor: pointer;
-        &:hover {
+        &:hover,&.active {
           background: @green5; color:#fff;
         }
       }
@@ -69,28 +74,14 @@ main {
   width:75%; height:550px;
   .compatibilityTable {
     .posa; right:0; top:0;
-    .browser {
-    }
-    .browser {
-      li {
-        color:@green5;
-      }
-    }
-    .browserCompatibility {
-      li{
-        color:@green5;
-      }
-    }
     .browser,.browserCompatibility {
       li {
-        display: inline-block; .ta; padding:7px; width:60px; border-left:1px solid #ddd;
+        color:@green5;display: inline-block; .ta; padding:7px; width:60px; border-left:1px solid #ddd;
         &:nth-child(1){
           width:80px;
         }
         &:nth-child(2){
           width:140px;
-        }
-        &:nth-child(5){
         }
       }
     }
@@ -115,6 +106,24 @@ main {
     }
     .cube5{
       background: @orange2; top:200px; left:300px;
+    }
+
+    .module {
+      margin-bottom:10px;
+      .box-sizing(border-box);
+      p {
+        padding:5px; background: @green5; color:#fff; text-indent: 5px; .border-radius(3px);
+      }
+      >div,.html-code {
+        padding:10px; border:1px solid #ccc; margin-top:10px; .border-radius(3px);
+        background: #fff; color:#333;
+      }
+      .demo {
+        height:200px;
+      }
+      .html-code {
+        width:100%; resize: none; outline: none; height: auto; line-height: 25px;
+      }
     }
   }
 }

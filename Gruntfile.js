@@ -1,28 +1,22 @@
 module.exports = function (grunt){
 
-    //'src/reset.less',
-
     grunt.initConfig({
         watch : {
+            //xless basic
             xless: {
-                files: ['src/**/**.less'],
-                tasks: ['concat:dist']
-            },
-            test : {
-                files : ['src/**/**.less','test/test.less'],
-                tasks : ['less:test']
+                files: ['src/animation/**/**.less','src/basic/**/**.less','src/components/**/**.less'],
+                tasks: ['concat:xlessBasic']
             },
             homePage : {
-                files : ['src/**/**.less', 'test/index.less'],
+                files : ['src/**/**.less','src/**/**/**.less', 'src/**/**/**.html', 'test/index.less'],
                 tasks : ['less:homePage']
             }
-        },
+        },  
         concat: {
-            dist: {
+            xlessBasic: {
                 src: [
-                    'src/reset.less',
-                    'src/mixins/**.less',
-                    'src/resource/**.less',
+                    'src/basic/reset.less',
+                    'src/basic/**/**.less',
                     'src/animation/**.less',
                     'src/animation/**/**.less',
                     'src/components/**.less',
@@ -32,11 +26,6 @@ module.exports = function (grunt){
             }
         },
         less : {
-            test : {
-                files: {
-                    "test/test.css": "test/test.less"
-                }
-            },
             homePage : {
                 files : {
                     "test/index.css" : "test/index.less"

@@ -1,0 +1,38 @@
+.xless-zoomLoading (){
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin: 60px auto;
+
+  >div {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #67CF22;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .animation-fill-mode(both);
+    .animation-duration(2s);
+    &:extend(.infinite);
+    .animation-name(zoomLoading);
+    .animation-timing-function(ease-in-out);
+  }
+
+  >div:nth-child(2) {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+
+  @-webkit-keyframes zoomLoading {
+    0%, 100% { .transform(scale(0.0)) }
+    50% { .transform(scale(1.0))}
+  }
+
+  @keyframes zoomLoading {
+    0%, 100% { .transform(scale(0.0)) }
+    50% { .transform(scale(1.0))}
+  }
+}

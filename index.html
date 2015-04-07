@@ -9,130 +9,238 @@
 <div class="github">
     <ul class="navigator-func">
         <li><a href="https://github.com/royJang/xless"><button class="forkMe">Fork me on Github</button></a></li>
-        <li><a href="/"><p>动画</p><p>animate</p></a></li>
-        <li><a href="test/components.html"><p>组件</p><p>components</p></a></li>
+        <li class="jump-animate"><a href="javascript:void(0);"><p>动画</p><p>animate</p></a></li>
+        <li class="jump-components"><a href="javascript:void(0);"><p>组件</p><p>components</p></a></li>
     </ul>
 </div>
 <nav class="nav">
     <div class="title"><span>x</span><span>L</span><span>e</span><span>s</span><span>s</span></div>
 </nav>
 <main>
-    <div class="left-nav">
-        <ul class="effect-list"></ul>
-    </div>
-    <div class="right-nav">
-        <div class="compatibilityTable">
-            <ul class="browser">
-                <li>Chrome</li>
-                <li>Internet Explorer</li>
-                <li>Firefox</li>
-                <li>Safari</li>
-                <li>Opera</li>
-            </ul>
-            <ul class="browserCompatibility">
-                <li class="chrome">/</li>
-                <li class="ie">/</li>
-                <li class="ff">/</li>
-                <li class="safari">/</li>
-                <li class="opera">/</li>
-            </ul>
+    <div class="gh-animate">
+        <div class="left-nav">
+            <ul class="effect-list"></ul>
         </div>
-        <div class="stage">
-            <div class="cube cube1"></div>
-            <div class="cube cube2"></div>
-            <div class="cube cube3"></div>
-            <div class="cube cube4"></div>
-            <div class="cube cube5"></div>
+        <div class="right-nav">
+            <div class="compatibilityTable">
+                <ul class="browser">
+                    <li>Chrome</li>
+                    <li>Internet Explorer</li>
+                    <li>Firefox</li>
+                    <li>Safari</li>
+                    <li>Opera</li>
+                </ul>
+                <ul class="browserCompatibility">
+                    <li class="chrome">/</li>
+                    <li class="ie">/</li>
+                    <li class="ff">/</li>
+                    <li class="safari">/</li>
+                    <li class="opera">/</li>
+                </ul>
+            </div>
+            <div class="stage">
+                <div class="cube cube1"></div>
+                <div class="cube cube2"></div>
+                <div class="cube cube3"></div>
+                <div class="cube cube4"></div>
+                <div class="cube cube5"></div>
+            </div>
+        </div>
+    </div>
+    <div class="gh-components">
+        <div class="left-nav">
+            <ul class="components-list"></ul>
+        </div>
+        <div class="right-nav">
+            <div class="stage">
+                <div class="module">
+                    <p>演示</p>
+                    <div class="demo">
+
+                    </div>
+                </div>
+                <div class="module">
+                    <p>HTML</p>
+                    <textarea class="html-code" contenteditable="false" readonly>
+
+                    </textarea>
+                </div>
+            </div>
         </div>
     </div>
 </main>
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 <script src="test/data/effectExplain.js"></script>
+<script src="test/data/components.js"></script>
 <script>
     (function(){
+        //添加animate.effect列表进入dom
         var arr = [];
-
         Object.keys(effect_list).forEach(function ( el ){
             arr.push(
                 "<li effect-name="+ el +"><span>" + el + "</span></li>"
             );
         });
         $(".effect-list").html(arr.join(""));
+
+        //添加components列表进入dom
+        var componentsArr = [];
+        Object.keys(component_list).forEach(function ( el ){
+            componentsArr.push(
+                "<li effect-name=" + el + "><span>" + el + "</span></li>"
+            )
+        });
+        $(".components-list").html(componentsArr.join(""));
+
+        //页面间切换
+        var navigator = $(".navigator-func");
+        var jumpToAnimate = navigator.find(".jump-animate"),
+            jumpToComponents = navigator.find(".jump-components"),
+            ghAnimate = $(".gh-animate"),
+            ghComponents = $(".gh-components");
+
+        var In = "zoomInLeft",
+            Out = "zoomOutRight";
+
+        jumpToAnimate.on("click", function (){
+            ghAnimate.removeClass(Out).addClass(In).show();
+            ghComponents.removeClass(In).addClass(Out);
+            setTimeout(function (){
+                ghComponents.hide();
+            },500)
+        });
+
+        jumpToComponents.on("click", function (){
+            ghComponents.removeClass(Out).addClass(In).show();
+            ghAnimate.removeClass(In).addClass(Out);
+            setTimeout(function (){
+                ghAnimate.hide();
+            },500)
+        });
+
+
+
     })();
 
-    var cube = $(".stage").find("div.cube");
-    var logo = $(".title").find("span");
-    var i = 0;
-    var j = 0;
-    var k = 0;
-    var timer = null;
-    var timer2 = null;
-    var max = 4;
+    //gh-animate
+    (function (){
+        var cube = $(".stage").find("div.cube");
+        var logo = $(".title").find("span");
+        var i = 0;
+        var j = 0;
+        var k = 0;
+        var timer = null;
+        var timer2 = null;
+        var max = 4;
 
-    var fb = function (e1,e2,e3){
-        if(j>max) return;
-        clearTimeout(timer);
-        timer = setTimeout(function (){
-            if(j == max ){
-                logo.eq(j).addClass(e3);
-                logo.eq(j).show();
-                j = 0;
-            }else {
-                logo.eq(j).addClass(j % 2 == 0 ? e1 : e2);
-                logo.eq(j).show();
+        var fb = function (e1,e2,e3){
+            if(j>max) return;
+            clearTimeout(timer);
+            timer = setTimeout(function (){
+                if(j == max ){
+                    logo.eq(j).addClass(e3);
+                    logo.eq(j).show();
+                    j = 0;
+                }else {
+                    logo.eq(j).addClass(j % 2 == 0 ? e1 : e2);
+                    logo.eq(j).show();
+                }
+                j++;
+                fb(e1,e2,e3);
+            },300)
+        };
+
+        var fb2 = function (e1,e2,e3){
+            if(k>max) return;
+            clearTimeout(timer2);
+            timer2 = setTimeout(function (){
+                if(k == max ){
+                    cube.eq(k).addClass(e3);
+                    cube.eq(k).show();
+                    k = 0;
+                }else {
+                    cube.eq(k).addClass(k % 2 == 0 ? e1 : e2);
+                    cube.eq(k).show();
+                }
+                k++;
+                fb2(e1,e2,e3);
+            },300)
+        };
+
+        fb("zoomInLeft","zoomInRight","zoomInDown");
+        fb2("","","");
+
+        var bc = $(".browserCompatibility");
+        var chrome = bc.find(".chrome"),
+                ie = bc.find(".ie"),
+                ff = bc.find(".ff"),
+                safari = bc.find(".safari"),
+                opera = bc.find(".opera");
+
+        $(".effect-list").find("li").on("click", function (){
+            var val = $(this).attr("effect-name");
+            if( i > max) i = 0;
+            cube.eq(i).attr("class","cube cube"+ (i+1));
+            cube.eq(i).addClass(val);
+            var cbl = effect_list[val].compatibility;
+
+            if( cbl ){
+                ie.html( cbl.ie || "10+" );
+                chrome.html( cbl.chrome || "ok" );
+                ff.html( cbl.ff || "ok" );
+                safari.html( cbl.safari || "ok" );
+                opera.html( cbl.opera || "ok" );
+            }else{
+                bc.find("li").html("ok");
+                bc.find("li.ie").html("10+");
             }
-            j++;
-            fb(e1,e2,e3);
-        },300)
-    };
 
-    var fb2 = function (e1,e2,e3){
-        if(k>max) return;
-        clearTimeout(timer2);
-        timer2 = setTimeout(function (){
-            if(k == max ){
-                cube.eq(k).addClass(e3);
-                cube.eq(k).show();
-                k = 0;
-            }else {
-                cube.eq(k).addClass(k % 2 == 0 ? e1 : e2);
-                cube.eq(k).show();
+            i++;
+        });
+    })();
+
+    //gh-components
+    (function (){
+
+        var ghComponents = $(".gh-components .right-nav .stage");
+        var demo = ghComponents.find(".demo");
+        var htmlCode = ghComponents.find(".html-code");
+
+        var format = function ( template ){
+            var e = template.match(/<\/?\w+.+?>/g),
+                len = e.length;
+
+            var str = "";
+            e.forEach(function (el){
+                str += el + "\n";
+            });
+
+            return {
+                str : str,
+                len : len
             }
-            k++;
-            fb2(e1,e2,e3);
-        },300)
-    };
+        };
 
-    fb("zoomInLeft","zoomInRight","zoomInDown");
-    fb2("","","");
+        var componentsList = $(".components-list").find("li");
 
-    var bc = $(".browserCompatibility");
-    var chrome = bc.find(".chrome"),
-        ie = bc.find(".ie"),
-        ff = bc.find(".ff"),
-        safari = bc.find(".safari"),
-        opera = bc.find(".opera");
+        componentsList.on("click", function (){
 
-    $(".effect-list").find("li").on("click", function (){
-        var val = $(this).attr("effect-name");
-        if( i > max) i = 0;
-        cube.eq(i).attr("class","cube cube"+ (i+1));
-        cube.eq(i).addClass(val);
-        var cbl = effect_list[val].compatibility;
+            componentsList.find("span").removeClass("active");
+            $(this).find("span").addClass("active");
 
-        if( cbl ){
-            ie.html( cbl.ie || "10+" );
-            chrome.html( cbl.chrome || "ok" );
-            ff.html( cbl.ff || "ok" );
-            safari.html( cbl.safari || "ok" );
-            opera.html( cbl.opera || "ok" );
-        }else{
-            bc.find("li").html("ok");
-            bc.find("li.ie").html("10+");
-        }
+            var r = component_list[$(this).attr("effect-name")];
+            var res = format( r.template );
 
-        i++;
-    });
+            demo.html( res.str );
+
+            htmlCode.css("height", 25*res.len + 20);
+            htmlCode.html( res.str );
+        });
+
+
+        componentsList.eq(0).trigger("click");
+
+    })();
 
 </script>
 </body>
