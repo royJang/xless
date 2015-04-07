@@ -9,10 +9,24 @@ body {
 
 .github{
   .posf; top:5px; left:5px;
-  .forkMe{
-    background:#eee url(data/favicon.png) 2px no-repeat;
-    border:1px solid #ccc; padding:5px 7px 5px 25px; .border-radius(3px);
-    outline: none; background-size: 18px;
+  .navigator-func {
+    .box-sizing(border-box); display: inline-block;
+    li {
+      .fl; height:40px; line-height: 20px; padding:5px 7px; .ta;
+      a {
+        display: block; .tdn; color:@deep_blue;
+
+        button.forkMe {
+          background:#eee url(data/favicon.png) 2px no-repeat;
+          border:1px solid #ccc; padding:5px 7px 5px 25px; .border-radius(3px);
+          outline: none; background-size: 18px; display: inline-block;
+        }
+
+        &:hover {
+          color:@grey;
+        }
+      }
+    }
   }
 }
 
