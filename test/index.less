@@ -9,7 +9,7 @@ body {
 }
 
 .github{
-  .posf; top:5px; left:5px;
+  .fl;
   .navigator-func {
     .box-sizing(border-box); display: inline-block;
     li {
@@ -30,9 +30,12 @@ body {
     }
   }
 }
+nav {
+  width:100%; .of; height:50px;
+}
 
 nav .title {
-  position: fixed;right:200px; top:0; font-family:cursive;
+  font-family:cursive; .fr; position: absolute; right:100px; top:0;
   font-size:80px; letter-spacing: 3px; width:200px; z-index: 999;
   span {
     display: none; position: relative; width:30px;
@@ -43,7 +46,7 @@ nav .title {
 }
 
 main {
-  min-width:1024px; margin:111px auto; width:75%; .box-sizing(border-box);
+  min-width:1024px; margin:111px auto; width:75%; .box-sizing(border-box); clear: both;
 }
 
 .gh-components {
@@ -55,9 +58,8 @@ main {
 }
 
 .left-nav {
-  width:20%; height:550px; .of(auto);
+  width:20%; .of(auto); .fl; height: 500px;
   .effect-list,.components-list {
-    .posa; width:100%;
     li {
       padding:8px 0;
       span {
@@ -71,7 +73,7 @@ main {
 }
 
 .right-nav {
-  width:75%; height:550px;
+  width:75%; .fl;
   .compatibilityTable {
     .posa; right:0; top:0;
     .browser,.browserCompatibility {
@@ -87,7 +89,6 @@ main {
     }
   }
   .stage {
-    .posa; width:100%;
     .cube {
       width:100px; height:100px; .border-radius(50%); .posa;
       display: none;
@@ -109,8 +110,7 @@ main {
     }
 
     .module {
-      margin-bottom:10px;
-      .box-sizing(border-box);
+      margin-bottom:10px;  .box-sizing(border-box);
       p {
         padding:5px; background: @green5; color:#fff; text-indent: 5px; .border-radius(3px);
       }
@@ -120,9 +120,12 @@ main {
       }
       .demo {
         height:200px;
+        >*{
+          margin: 60px auto;
+        }
       }
       .html-code {
-        width:100%; resize: none; outline: none; height: auto; line-height: 25px;
+        width:100%; resize: none; outline: none; line-height: 25px;
       }
     }
   }

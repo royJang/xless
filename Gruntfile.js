@@ -5,7 +5,7 @@ module.exports = function (grunt){
             //xless basic
             xless: {
                 files: ['src/animation/**/**.less','src/basic/**/**.less','src/components/**/**.less'],
-                tasks: ['concat:xlessBasic']
+                tasks: ['concat:xlessBasic','less:homePage']
             },
             homePage : {
                 files : ['src/**/**.less','src/**/**/**.less', 'src/**/**/**.html', 'test/index.less'],

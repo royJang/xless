@@ -25,7 +25,8 @@ function scanFolder(path){
 
 
                     var $com = null,
-                        $temp = null;
+                        $temp = null,
+                        $line = null;
 
                     if( $start > -1 && $end > -1 ){
                         $com = $file.slice($start+15,$end);
@@ -33,11 +34,13 @@ function scanFolder(path){
 
                     if( $tempStart > -1 && $tempEnd > -1 ){
                         $temp = $file.slice($tempStart+10,$tempEnd);
+                        $line = $temp.match(/>\s+?/g).length;
                     }
 
                     fileList.push({
                        path : tmpPath,      //文件名
-                       template : $temp,    //模版文件
+                       template : $temp,
+                       line : $line,
                        compatibility : $com //兼容性情况
                     });
                 }
@@ -106,17 +109,11 @@ var componentsArr = [];
 components.forEach(function (el,i){
     var b = el.path.search(/\/\w+\.html/);
     if( b > -1 ){
-
-        var $template = el.template && (function (){
-               return el.template.replace(/(\s+?<)|(>\s+?<)|(>\s+?)/g, function (m,a1,a2,a3){
-                    return a1 ? "<" : a2 ? "><" : ">";
-                });
-            })();
-
+        console.log(el);
         componentsArr.push({
             "name" : el.path.slice(b+1,-5),
             "compatibility" : el.compatibility,
-            "template" : $template
+            "line" : el.line
         });
     }
 });
@@ -129,7 +126,7 @@ componentsArr.forEach(function (el,i){
     componentStr += "    " + el.name;
     componentStr += ":{\n";
     componentStr += "        compatibility : " + el.compatibility + ",\n";
-    componentStr += "        template : \'" + el.template + "\'\n";
+    componentStr += "        line : \'" + el.line + "\'\n";
     componentStr += "    }";
     componentStr += ((cal == (i + 1)) ? "" : ",") + "\n";
 });

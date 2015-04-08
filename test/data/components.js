@@ -1,14 +1,26 @@
 var component_list = { 
     loading:{
         compatibility : null,
-        template : '<ul class="xless-loading"><li></li><li></li><li></li><li></li><li></li></ul>'
+        line : '7'
     },
-    rectFlipLoading:{
+    loading2:{
         compatibility : null,
-        template : '<div class="xless-rectFlipLoading"></div>'
+        line : '1'
     },
-    zoomLoading:{
+    loading3:{
         compatibility : null,
-        template : '<div class="xless-zoomLoading"><div></div><div></div></div>'
+        line : '4'
+    },
+    loading4:{
+        compatibility : null,
+        line : '4'
+    },
+    loading5:{
+        compatibility : null,
+        line : '5'
+    },
+    loading6:{
+        compatibility : null,
+        line : '20'
     }
-};
+}; 
