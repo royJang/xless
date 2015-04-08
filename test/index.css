@@ -3701,6 +3701,7 @@ main {
 .left-nav .effect-list li,
 .left-nav .components-list li {
   padding: 8px 0;
+  margin: 2px;
 }
 .left-nav .effect-list li span,
 .left-nav .components-list li span {
