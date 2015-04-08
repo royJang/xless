@@ -3807,4 +3807,6 @@ main {
   resize: none;
   outline: none;
   line-height: 25px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
