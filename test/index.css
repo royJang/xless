@@ -3684,7 +3684,8 @@ main {
   box-sizing: border-box;
   clear: both;
 }
-.gh-components {
+.gh-components,
+.gh-download {
   display: none;
 }
 .left-nav,
@@ -3809,4 +3810,60 @@ main {
   line-height: 25px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+.gh-download {
+  width: 100%;
+  position: relative;
+}
+.gh-download .download-channel .download-channel-animate,
+.gh-download .download-channel .download-channel-components {
+  zoom: 1;
+}
+.gh-download .download-channel .download-channel-animate:before,
+.gh-download .download-channel .download-channel-components:before,
+.gh-download .download-channel .download-channel-animate:after,
+.gh-download .download-channel .download-channel-components:after {
+  content: " ";
+  display: table;
+}
+.gh-download .download-channel .download-channel-animate:after,
+.gh-download .download-channel .download-channel-components:after {
+  clear: both;
+}
+.gh-download .download-channel .download-channel-animate p,
+.gh-download .download-channel .download-channel-components p {
+  padding: 5px;
+  background: #009966;
+  color: #fff;
+  text-indent: 5px;
+  border-radius: 3px;
+}
+.gh-download .download-channel .download-channel-animate ul li,
+.gh-download .download-channel .download-channel-components ul li {
+  width: 25%;
+  float: left;
+  padding: 10px;
+}
+.gh-download .download-channel .download-channel-animate ul li input[type='checkbox'],
+.gh-download .download-channel .download-channel-components ul li input[type='checkbox'],
+.gh-download .download-channel .download-channel-animate ul li span,
+.gh-download .download-channel .download-channel-components ul li span {
+  vertical-align: middle;
+}
+.gh-download .download-channel .download-channel-animate ul li span,
+.gh-download .download-channel .download-channel-components ul li span {
+  padding-left: 5px;
+}
+.gh-download .gh-download-func {
+  margin: 20px auto;
+  width: 409px;
+}
+.gh-download .gh-download-func button {
+  padding: 10px;
+  background: #336699;
+  color: #fff;
+  border: none;
+  margin-top: 10px;
+  font-size: 15px;
+  border-radius: 3px;
 }
