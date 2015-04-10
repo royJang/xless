@@ -340,6 +340,7 @@
                 setTimeout(function (){
                     downloadLock = false;
                     downloadMsg.html("");
+                    window.URL.revokeObjectURL(blob);
                 },1000)
             });
         });
