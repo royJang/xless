@@ -80,6 +80,7 @@
                 <ul class="download-channel-components-list"></ul>
             </div>
         </div>
+        <p class="download-msg"></p>
         <div class="gh-download-func">
             <button class="download_less">download (.less)</button>
             <button class="download_scss">download (.scss)</button>
@@ -278,6 +279,8 @@
     //gh-download
     (function (){
 
+        var downloadLock = false;
+        var downloadMsg = $(".download-msg");
         var download_less_btn = $(".download_less");
         var animateList = $(".download-channel-animate-list"),
             componentsList = $(".download-channel-components-list");
@@ -289,6 +292,13 @@
         ];
 
         download_less_btn.on("click", function (){
+            downloadMsg.html("文件开始下载...");
+            if( downloadLock ){
+                downloadMsg.html("文件正在下载...")
+                return;
+            }
+            downloadLock = true;
+
             animateList.find("li").each(function (i, el){
                 var $el = $(el),
                     v = $el.find("input").prop("checked");
@@ -326,6 +336,8 @@
                 atag.download = "xless.less";
                 document.body.appendChild(atag);
                 atag.click();
+                downloadLock = false;
+                downloadMsg.html("");
             });
         });
     })();
