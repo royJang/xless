@@ -83,8 +83,8 @@
         <p class="download-msg"></p>
         <div class="gh-download-func">
             <button class="download_less">download (.less)</button>
-            <button class="download_scss">download (.scss)</button>
-            <button class="download_css">download (.css)</button>
+            <button class="download_scss" disabled style="background: #ccc; cursor:default;">download (.scss)</button>
+            <button class="download_css" disabled style="background: #ccc; cursor:default;">download (.css)</button>
         </div>
     </div>
 </main>
@@ -285,19 +285,17 @@
         var animateList = $(".download-channel-animate-list"),
             componentsList = $(".download-channel-components-list");
 
-        //所需要下载的文件列表
-        var downloadArr = [
-            'src/basic/mixins/animation.less',
-            'src/animation/base.less'
-        ];
-
         download_less_btn.on("click", function (){
-            downloadMsg.html("文件开始下载...");
+            downloadMsg.html("开始分析文件...");
             if( downloadLock ){
-                downloadMsg.html("文件正在下载...")
+                downloadMsg.html("正在分析下载...");
                 return;
             }
             downloadLock = true;
+
+            //所需要下载的文件列表
+            var downloadArr = ['src/basic/mixins/animation.less',
+                'src/animation/base.less'];
 
             animateList.find("li").each(function (i, el){
                 var $el = $(el),
@@ -316,6 +314,12 @@
                     );
                 }
             });
+
+            if(downloadArr.length < 3){
+                downloadMsg.html("请选择至少一个文件");
+                downloadLock = false;
+                return;
+            }
 
             //拿到最终需要下载文件列表
             var ajaxTasks = [];
