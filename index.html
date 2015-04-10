@@ -88,7 +88,7 @@
         </div>
     </div>
 </main>
-<script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+<script src="test/lib/jquery.js"></script>
 <script src="test/lib/async.js"></script>
 <script src="test/data/effectExplain.js"></script>
 <script src="test/data/components.js"></script>
@@ -336,8 +336,11 @@
                 atag.download = "xless.less";
                 document.body.appendChild(atag);
                 atag.click();
-                downloadLock = false;
-                downloadMsg.html("");
+                downloadMsg.html("下载完毕...");
+                setTimeout(function (){
+                    downloadLock = false;
+                    downloadMsg.html("");
+                },1000)
             });
         });
     })();
