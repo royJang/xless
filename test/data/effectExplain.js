@@ -152,7 +152,16 @@ var effect_list = {
     "flash" : {
        "compatibility" : null    
     },
+    "hinge" : {
+       "compatibility" : null    
+    },
     "pulse" : {
+       "compatibility" : null    
+    },
+    "rollIn" : {
+       "compatibility" : null    
+    },
+    "rollOut" : {
        "compatibility" : null    
     },
     "rubberBand" : {
@@ -192,15 +201,6 @@ var effect_list = {
        "compatibility" : null    
     },
     "slideOutUp" : {
-       "compatibility" : null    
-    },
-    "hinge" : {
-       "compatibility" : null    
-    },
-    "rollIn" : {
-       "compatibility" : null    
-    },
-    "rollOut" : {
        "compatibility" : null    
     },
     "zoomIn" : {

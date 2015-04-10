@@ -81,13 +81,14 @@
             </div>
         </div>
         <div class="gh-download-func">
-            <button>download (.less)</button>
-            <button>download (.scss)</button>
-            <button>download (.css)</button>
+            <button class="download_less">download (.less)</button>
+            <button class="download_scss">download (.scss)</button>
+            <button class="download_css">download (.css)</button>
         </div>
     </div>
 </main>
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+<script src="test/lib/async.js"></script>
 <script src="test/data/effectExplain.js"></script>
 <script src="test/data/components.js"></script>
 <script>
@@ -277,8 +278,56 @@
     //gh-download
     (function (){
 
+        var download_less_btn = $(".download_less");
+        var animateList = $(".download-channel-animate-list"),
+            componentsList = $(".download-channel-components-list");
 
+        //所需要下载的文件列表
+        var downloadArr = [
+            'src/basic/mixins/animation.less',
+            'src/animation/base.less'
+        ];
 
+        download_less_btn.on("click", function (){
+            animateList.find("li").each(function (i, el){
+                var $el = $(el),
+                    v = $el.find("input").prop("checked");
+                if ( v ){
+                    var t = $el.find("label>span").text();
+                    var dirName = "seeker";
+
+                    ["bounce", "circular", "fade", "flip", "lightspeed", "rotate", "slide", "zoom"].forEach(function (el, i){
+                        if(t.indexOf(el) > -1){
+                            dirName = el;
+                        }
+                    });
+                    downloadArr.push(
+                        "src/animation/" + dirName + "/" + t + ".less"
+                    );
+                }
+            });
+
+            //拿到最终需要下载文件列表
+            var ajaxTasks = [];
+            //遍历下载目录，下载文件
+            downloadArr.forEach(function ( el ){
+               ajaxTasks.push(function (callback){
+                   $.get(el, function (data){
+                       callback(null,data);
+                   })
+               })
+            });
+
+            async.series(ajaxTasks, function (err,result){
+                var blob = new Blob(result, { type : 'text/less' });
+                var link = window.URL.createObjectURL(blob);
+                var atag = document.createElement("a");
+                atag.href = link;
+                atag.download = "xless.less";
+                document.body.appendChild(atag);
+                atag.click();
+            });
+        });
     })();
 
 </script>
