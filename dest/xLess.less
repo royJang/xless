@@ -1,3 +1,10 @@
+/*
+   xless mainly include three class and h5 reset file
+   We have learned much from/been inspired by/taken code where offered from:
+   a. HTML5-Reset
+   b. Animate.css
+*/
+
 .reset (){
 
   html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
@@ -609,18 +616,6 @@
 
 .infinite {
   .animation-iteration-count(infinite);
-}
-
-.hinge {
-  .animation-duration(2s);
-}
-
-.running {
-  .animation-play-state(running);
-}
-
-.paused {
-  .animation-play-state(paused);
 }
 .bounce (){
 
@@ -2703,6 +2698,79 @@
   &:extend(.animated);
   .animation-name(flash);
 }
+.hinge (){
+
+  @-webkit-keyframes hinge {
+    0% {
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+
+    20%, 60% {
+      -webkit-transform: rotate3d(0, 0, 1, 80deg);
+      transform: rotate3d(0, 0, 1, 80deg);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+
+    40%, 80% {
+      -webkit-transform: rotate3d(0, 0, 1, 60deg);
+      transform: rotate3d(0, 0, 1, 60deg);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: translate3d(0, 700px, 0);
+      transform: translate3d(0, 700px, 0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes hinge {
+    0% {
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+
+    20%, 60% {
+      -webkit-transform: rotate3d(0, 0, 1, 80deg);
+      transform: rotate3d(0, 0, 1, 80deg);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+
+    40%, 80% {
+      -webkit-transform: rotate3d(0, 0, 1, 60deg);
+      transform: rotate3d(0, 0, 1, 60deg);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: translate3d(0, 700px, 0);
+      transform: translate3d(0, 700px, 0);
+      opacity: 0;
+    }
+  }
+
+  &:extend(.animated);
+  .animation-name(hinge);
+}
 .pulse (){
 
   @-webkit-keyframes pulse {
@@ -2741,6 +2809,68 @@
 
   &:extend(.animated);
   .animation-name(pulse);
+}
+.rollIn (){
+
+  @-webkit-keyframes rollIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+      transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  @keyframes rollIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+      transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  &:extend(.animated);
+  .animation-name(rollIn);
+}
+.rollOut  (){
+
+  @-webkit-keyframes rollOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    }
+  }
+
+  @keyframes rollOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    }
+  }
+
+  &:extend(.animated);
+  .animation-name(rollOut);
 }
 .rubberBand  (){
 
@@ -3305,141 +3435,6 @@
 
   &:extend(.animated);
   .animation-name(slideOutUp);
-}
-.hinge (){
-
-  @-webkit-keyframes hinge {
-    0% {
-      -webkit-transform-origin: top left;
-      transform-origin: top left;
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-    }
-
-    20%, 60% {
-      -webkit-transform: rotate3d(0, 0, 1, 80deg);
-      transform: rotate3d(0, 0, 1, 80deg);
-      -webkit-transform-origin: top left;
-      transform-origin: top left;
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-    }
-
-    40%, 80% {
-      -webkit-transform: rotate3d(0, 0, 1, 60deg);
-      transform: rotate3d(0, 0, 1, 60deg);
-      -webkit-transform-origin: top left;
-      transform-origin: top left;
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-      opacity: 1;
-    }
-
-    100% {
-      -webkit-transform: translate3d(0, 700px, 0);
-      transform: translate3d(0, 700px, 0);
-      opacity: 0;
-    }
-  }
-
-  @keyframes hinge {
-    0% {
-      -webkit-transform-origin: top left;
-      transform-origin: top left;
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-    }
-
-    20%, 60% {
-      -webkit-transform: rotate3d(0, 0, 1, 80deg);
-      transform: rotate3d(0, 0, 1, 80deg);
-      -webkit-transform-origin: top left;
-      transform-origin: top left;
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-    }
-
-    40%, 80% {
-      -webkit-transform: rotate3d(0, 0, 1, 60deg);
-      transform: rotate3d(0, 0, 1, 60deg);
-      -webkit-transform-origin: top left;
-      transform-origin: top left;
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-      opacity: 1;
-    }
-
-    100% {
-      -webkit-transform: translate3d(0, 700px, 0);
-      transform: translate3d(0, 700px, 0);
-      opacity: 0;
-    }
-  }
-
-  &:extend(.animated);
-  .animation-name(hinge);
-}
-.rollIn (){
-
-  @-webkit-keyframes rollIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
-      transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
-    }
-
-    100% {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-
-  @keyframes rollIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
-      transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
-    }
-
-    100% {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-
-  &:extend(.animated);
-  .animation-name(rollIn);
-}
-.rollOut  (){
-
-  @-webkit-keyframes rollOut {
-    0% {
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 0;
-      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
-      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
-    }
-  }
-
-  @keyframes rollOut {
-    0% {
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 0;
-      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
-      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
-    }
-  }
-
-  &:extend(.animated);
-  .animation-name(rollOut);
 }
 .zoomIn (){
 
