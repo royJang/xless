@@ -101,7 +101,7 @@
 
             //链接所有less内容
             result.data.forEach(function (el){
-                $str += el; 
+                $str += el;
             });
 
             //添加对less的执行，这样才可以编译出来
