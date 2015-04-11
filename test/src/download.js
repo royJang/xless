@@ -8,7 +8,6 @@
     var animateList = $(".download-channel-animate-list"),
         componentsList = $(".download-channel-components-list");
 
-
     var getDownloadFileList = function ( callback ){
         //所需要下载的文件列表
         var $$file = [
@@ -65,14 +64,15 @@
         });
     };
 
-    var createDownloadLink = function ( result, type, fileName ){
+    var timer = null;
+    var createDownloadLink = function ( result, fileName ){
         downloadMsg.html("开始分析文件...");
         if( downloadLock ){
             downloadMsg.html("正在分析下载...");
             return;
         }
         downloadLock = true;
-        var blob = new Blob( result, { type : type });
+        var blob = new Blob( result, { type : "text/css" });
         var link = window.URL.createObjectURL(blob);
         var atag = document.createElement("a");
         atag.href = link;
@@ -80,7 +80,8 @@
         document.body.appendChild(atag);
         atag.click();
         downloadMsg.html("下载完毕...");
-        setTimeout(function (){
+        clearTimeout(timer);
+        timer = setTimeout(function (){
             downloadLock = false;
             downloadMsg.html("");
             window.URL.revokeObjectURL(blob);
@@ -90,28 +91,25 @@
     //less文件下载
     download_less_btn.on("click", function (){
         getDownloadFileList(function (err,result){
-            createDownloadLink(result.data, "text/css", "xless.less");
-        })
+            createDownloadLink(result.data, "xless.less");
+        });
     });
 
     //css文件下载
     download_css_btn.on("click", function (){
         getDownloadFileList(function (err,result){
             var $str = "";
-
             //链接所有less内容
             result.data.forEach(function (el){
                 $str += el;
             });
-
             //添加对less的执行，这样才可以编译出来
             result.fileList.forEach(function (el){
-                $str += ( "\n.xless-" + el + "{ ." + el + "(); }");
+                $str += ( "\n.xless-" + el + "{ ." + el + "(); }" );
             });
-
             //编译less文件
             less.render($str, function (e, output) {
-                createDownloadLink([output.css], "text/css", "xless.css");
+                createDownloadLink([output.css], "xless.css");
             });
         });
     })
