@@ -9,6 +9,7 @@
         componentsList = $(".download-channel-components-list");
 
     var getDownloadFileList = function ( callback ){
+        downloadMsg.html("开始分析文件...");
         //所需要下载的文件列表
         var $$file = [
             'src/basic/mixins/animation.less',
@@ -66,9 +67,9 @@
 
     var timer = null;
     var createDownloadLink = function ( result, fileName ){
-        downloadMsg.html("开始分析文件...");
+        downloadMsg.html("分析完毕, 准备开始下载...");
         if( downloadLock ){
-            downloadMsg.html("正在分析下载...");
+            downloadMsg.html("正在准备中...");
             return;
         }
         downloadLock = true;
