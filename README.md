@@ -2,7 +2,7 @@
 ###
 ###[home page](http://royjang.github.io/xless/)
 
-###explain
+### Explain
 
 ###
 
@@ -14,12 +14,16 @@ then choose what you like, download it.
 
 ok , Let us start using it.
 
-###note
+### Usage note
 ###
 
-Any effect will need to add a xless- in the head
+First you need to add a <font color="red"> animated </font> class is assigned to an element
 
-For example, xless-bounce, xless-fadeIn and so on
+any effect will need to add a <font color="red"> xless- </font> in the head
+
+for example, xless-bounce, xless-fadeIn and so on ..
+
+ex : `<div class="animated xless-bounce"></div>`
 
 ### Questions?
 ###
