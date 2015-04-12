@@ -55,7 +55,7 @@
             }
         });
 
-        if(downloadArr.length < 3){
+        if($fileList.length < 1){
             downloadMsg.html("请选择至少一个文件");
             downloadLock = false;
             return;
