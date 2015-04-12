@@ -13,6 +13,7 @@ function scanFolder(path){
                 if (stats.isDirectory()) {
                     walk(tmpPath, fileList, folderList);
                 } else {
+
                     var $file = fs.readFileSync(tmpPath, 'utf-8');
 
                     //读取每个文件的compatibility
@@ -28,20 +29,20 @@ function scanFolder(path){
                         $temp = null,
                         $line = null;
 
-                    if( $start > -1 && $end > -1 ){
-                        $com = $file.slice($start+15,$end);
+                    if ($start > -1 && $end > -1) {
+                        $com = $file.slice($start + 15, $end);
                     }
 
-                    if( $tempStart > -1 && $tempEnd > -1 ){
-                        $temp = $file.slice($tempStart+10,$tempEnd);
+                    if ($tempStart > -1 && $tempEnd > -1) {
+                        $temp = $file.slice($tempStart + 10, $tempEnd);
                         $line = $temp.match(/>\s+?/g).length;
                     }
 
                     fileList.push({
-                       path : tmpPath,      //文件名
-                       template : $temp,
-                       line : $line,
-                       compatibility : $com //兼容性情况
+                        path: tmpPath,      //文件名
+                        template: $temp,
+                        line: $line,
+                        compatibility: $com //兼容性情况
                     });
                 }
             });
@@ -58,6 +59,7 @@ function scanFolder(path){
 var list = scanFolder("../../src/animation/").files;
 var result = [];
 var exclude = ["base"];
+var exclude2 = [".DS_"];
 
 //将文件名处理成效果名
 //result里返回效果名，和兼容性情况
@@ -65,7 +67,7 @@ list.forEach(function (el,i){
     var b = el.path.search(/\/(\w+)\.less/),
         r = el.path.slice(b+1,-5);
 
-    if( exclude.indexOf(r) > -1 ) return;
+    if( exclude.indexOf(r) > -1 || r.indexOf(exclude2) > -1 ) return;
     result.push({
         "effect" : r,
         "compatibility" : el.compatibility

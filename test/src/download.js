@@ -40,6 +40,21 @@
             }
         });
 
+        componentsList.find("li").each(function (i, el){
+            var $el = $(el),
+                v = $el.find("input").prop("checked");
+
+            if( v ){
+                var t = $el.find("label>span").text();
+
+                downloadArr.push(
+                    "src/components/" + t + "/" + t + ".less"
+                );
+
+                $fileList.push(t);
+            }
+        });
+
         if(downloadArr.length < 3){
             downloadMsg.html("请选择至少一个文件");
             downloadLock = false;
