@@ -146,7 +146,7 @@ var componentsLess = "";
 
 componentsArr.forEach(function (el){
     componentsLess += ".xless-" + el.name + "{\n";
-    componentsLess += "    .xless-" + el.name + "()\n";
+    componentsLess += "    ." + el.name + "()\n";
     componentsLess += "}\n";
 });
 
