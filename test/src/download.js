@@ -139,7 +139,7 @@
             //编译less文件
             less.render($str, function (e, output) {
                 if(e){
-                    downloadMsg.html("Compile error, please contact me..（zzl11081@gmail.com）");
+                    downloadMsg.html("Compile error, please try again");
                     downloadLock = true;
                     return;
                 }
