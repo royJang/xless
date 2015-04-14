@@ -9,9 +9,10 @@
         componentsList = $(".download-channel-components-list");
 
     var getDownloadFileList = function ( callback ){
-        downloadMsg.html("开始分析文件...");
+        downloadMsg.html("To analyze the file...");
         //所需要下载的文件列表
         var $$file = [
+            'src/basic/mixins/background.less',
             'src/basic/mixins/animation.less',
             'src/basic/mixins/transform.less',
             'src/basic/mixins/transition.less',
@@ -27,7 +28,7 @@
                 var t = $el.find("label>span").text();
                 var dirName = "seeker";
 
-                ["bounce", "circular", "fade", "flip", "lightspeed", "rotate", "slide", "zoom"].forEach(function (el, i){
+                ["bounce", "circular", "fade", "flip", "lightSpeed", "rotate", "slide", "zoom"].forEach(function (el, i){
                     if(t.indexOf(el) > -1){
                         dirName = el;
                     }
@@ -56,7 +57,7 @@
         });
 
         if($fileList.length < 1){
-            downloadMsg.html("请选择至少一个文件");
+            downloadMsg.html("Please select at least one file!");
             downloadLock = false;
             return;
         }
@@ -82,9 +83,9 @@
 
     var timer = null;
     var createDownloadLink = function ( result, fileName ){
-        downloadMsg.html("分析完毕, 准备开始下载...");
+        downloadMsg.html("The analysis is completed, ready to start the download...");
         if( downloadLock ){
-            downloadMsg.html("正在准备中...");
+            downloadMsg.html("Is being prepared...");
             return;
         }
         downloadLock = true;
@@ -95,7 +96,7 @@
         atag.download = fileName;
         document.body.appendChild(atag);
         atag.click();
-        downloadMsg.html("下载完毕...");
+        downloadMsg.html("The download is complete...");
         clearTimeout(timer);
         timer = setTimeout(function (){
             downloadLock = false;
@@ -103,6 +104,18 @@
             window.URL.revokeObjectURL(blob);
         },1000)
     };
+
+    //全选
+    var a1 = true,
+        b1 = true;
+    $("#animateAll").on("change", function (){
+        animateList.find('input[type="checkbox"]').prop("checked", a1);
+        a1 = !a1;
+    });
+    $("#componentsAll").on("change", function (){
+        componentsList.find('input[type="checkbox"]').prop("checked",b1);
+        b1 = !b1;
+    });
 
     //less文件下载
     download_less_btn.on("click", function (){
@@ -125,6 +138,11 @@
             });
             //编译less文件
             less.render($str, function (e, output) {
+                if(e){
+                    downloadMsg.html("Compile error, please contact me..（zzl11081@gmail.com）");
+                    downloadLock = true;
+                    return;
+                }
                 createDownloadLink([output.css], "xless.css");
             });
         });

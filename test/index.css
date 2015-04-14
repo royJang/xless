@@ -3823,6 +3823,15 @@ main {
 .gh-download .download-channel .download-channel-components:after {
   clear: both;
 }
+.gh-download .download-channel .download-channel-animate > p > label > input,
+.gh-download .download-channel .download-channel-components > p > label > input {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.gh-download .download-channel .download-channel-animate > p > label span,
+.gh-download .download-channel .download-channel-components > p > label span {
+  vertical-align: -2px;
+}
 .gh-download .download-channel .download-channel-animate p,
 .gh-download .download-channel .download-channel-components p {
   padding: 5px;
