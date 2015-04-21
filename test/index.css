@@ -96,7 +96,9 @@
 .circularEaseOut,
 .xless-loading li,
 .xless-loading2,
-.xless-loading3 > div {
+.xless-loading3 > div,
+.xless-loading7,
+.xless-loading8 > div {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
@@ -2987,8 +2989,8 @@
   animation-fill-mode: both;
   -webkit-animation-duration: 1.2s;
   animation-duration: 1.2s;
-  -webkit-animation-name: xlessLoading;
-  animation-name: xlessLoading;
+  -webkit-animation-name: loading1keyframes;
+  animation-name: loading1keyframes;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
 }
@@ -3008,7 +3010,7 @@
   -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
 }
-@-webkit-keyframes xlessLoading {
+@-webkit-keyframes loading1keyframes {
   0%,
   40%,
   100% {
@@ -3018,7 +3020,7 @@
     -webkit-transform: scaleY(1);
   }
 }
-@keyframes xlessLoading {
+@keyframes loading1keyframes {
   0%,
   40%,
   100% {
@@ -3038,12 +3040,12 @@
   animation-fill-mode: both;
   -webkit-animation-duration: 1.2s;
   animation-duration: 1.2s;
-  -webkit-animation-name: xlessRectFlipLoading;
-  animation-name: xlessRectFlipLoading;
+  -webkit-animation-name: loading2keyframes;
+  animation-name: loading2keyframes;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
 }
-@-webkit-keyframes xlessRectFlipLoading {
+@-webkit-keyframes loading2keyframes {
   0% {
     -webkit-transform: perspective(120px);
   }
@@ -3054,7 +3056,7 @@
     -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
   }
 }
-@keyframes xlessRectFlipLoading {
+@keyframes loading2keyframes {
   0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
     -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
@@ -3086,8 +3088,8 @@
   animation-fill-mode: both;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
-  -webkit-animation-name: zoomLoading;
-  animation-name: zoomLoading;
+  -webkit-animation-name: loading3keyframes;
+  animation-name: loading3keyframes;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
 }
@@ -3095,7 +3097,7 @@
   -webkit-animation-delay: -1s;
   animation-delay: -1s;
 }
-@-webkit-keyframes zoomLoading {
+@-webkit-keyframes loading3keyframes {
   0%,
   100% {
     -webkit-transform: scale(0);
@@ -3106,7 +3108,7 @@
     transform: scale(1);
   }
 }
-@keyframes zoomLoading {
+@keyframes loading3keyframes {
   0%,
   100% {
     -webkit-transform: scale(0);
@@ -3133,8 +3135,8 @@
   top: 0;
   background-color: #67CF22;
   border-radius: 100%;
-  -webkit-animation: bounce 2s infinite ease-in-out;
-  animation: bounce 2s infinite ease-in-out;
+  -webkit-animation: loading4keyframes 2s infinite ease-in-out;
+  animation: loading4keyframes 2s infinite ease-in-out;
 }
 .xless-loading4 > div:nth-child(2) {
   top: auto;
@@ -3153,7 +3155,7 @@
     -webkit-transform: rotate(360deg);
   }
 }
-@-webkit-keyframes bounce {
+@-webkit-keyframes loading4keyframes {
   0%,
   100% {
     -webkit-transform: scale(0);
@@ -3162,7 +3164,7 @@
     -webkit-transform: scale(1);
   }
 }
-@keyframes bounce {
+@keyframes loading4keyframes {
   0%,
   100% {
     transform: scale(0);
@@ -3183,8 +3185,8 @@
   background-color: #67CF22;
   border-radius: 100%;
   display: inline-block;
-  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
-  animation: bouncedelay 1.4s infinite ease-in-out;
+  -webkit-animation: loading5keyframes 1.4s infinite ease-in-out;
+  animation: loading5keyframes 1.4s infinite ease-in-out;
   /* Prevent first frame from flickering when animation starts */
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -3197,7 +3199,7 @@
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
-@-webkit-keyframes bouncedelay {
+@-webkit-keyframes loading5keyframes {
   0%,
   80%,
   100% {
@@ -3207,7 +3209,7 @@
     -webkit-transform: scale(1);
   }
 }
-@keyframes bouncedelay {
+@keyframes loading5keyframes {
   0%,
   80%,
   100% {
@@ -3232,8 +3234,8 @@
   background-color: #333;
   border-radius: 100%;
   position: absolute;
-  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
-  animation: bouncedelay 1.2s infinite ease-in-out;
+  -webkit-animation: loading6keyframes 1.2s infinite ease-in-out;
+  animation: loading6keyframes 1.2s infinite ease-in-out;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -3310,7 +3312,7 @@
   -webkit-animation-delay: -0.1s;
   animation-delay: -0.1s;
 }
-@-webkit-keyframes bouncedelay {
+@-webkit-keyframes loading6keyframes {
   0%,
   80%,
   100% {
@@ -3320,7 +3322,7 @@
     -webkit-transform: scale(1);
   }
 }
-@keyframes bouncedelay {
+@keyframes loading6keyframes {
   0%,
   80%,
   100% {
@@ -3330,6 +3332,108 @@
   40% {
     transform: scale(1);
     -webkit-transform: scale(1);
+  }
+}
+.xless-loading7 {
+  border: 5px solid #ccc;
+  border-left-color: #336699;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-name: loading7keyframes;
+  animation-name: loading7keyframes;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+@-webkit-keyframes loading7keyframes {
+  from {
+    -webkit-transform: rotateZ(0turn);
+  }
+  to {
+    -webkit-transform: rotateZ(1turn);
+  }
+}
+@keyframes loading7keyframes {
+  from {
+    -webkit-transform: rotateZ(0turn);
+    transform: rotateZ(0turn);
+  }
+  to {
+    -webkit-transform: rotateZ(1turn);
+    transform: rotateZ(1turn);
+  }
+}
+.xless-loading8 {
+  width: 40px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+.xless-loading8 > div {
+  width: 10px;
+  height: 10px;
+  background: #aaa;
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  border-radius: 15px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-name: loading8keyframes;
+  animation-name: loading8keyframes;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+@-webkit-keyframes loading8keyframes {
+  0% {
+    left: -7px;
+    top: -7px;
+  }
+  25% {
+    left: -7px;
+    top: 37px;
+  }
+  50% {
+    left: 27px;
+    top: 37px;
+  }
+  75% {
+    left: 27px;
+    top: -7px;
+  }
+  100% {
+    left: -7px;
+    top: -7px;
+  }
+}
+@keyframes loading8keyframes {
+  0% {
+    left: -7px;
+    top: -7px;
+  }
+  25% {
+    left: -7px;
+    top: 37px;
+  }
+  50% {
+    left: 27px;
+    top: 37px;
+  }
+  75% {
+    left: 27px;
+    top: -7px;
+  }
+  100% {
+    left: -7px;
+    top: -7px;
   }
 }
 html,

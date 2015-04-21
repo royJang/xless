@@ -15,8 +15,8 @@
     background-color: #67CF22;
     border-radius: 100%;
 
-    -webkit-animation: bounce 2.0s infinite ease-in-out;
-    animation: bounce 2.0s infinite ease-in-out;
+    -webkit-animation: loading4keyframes 2.0s infinite ease-in-out;
+    animation: loading4keyframes 2.0s infinite ease-in-out;
   }
 
   >div:nth-child(2) {
@@ -29,12 +29,12 @@
   @-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
   @keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
 
-  @-webkit-keyframes bounce {
+  @-webkit-keyframes loading4keyframes {
     0%, 100% { -webkit-transform: scale(0.0) }
     50% { -webkit-transform: scale(1.0) }
   }
 
-  @keyframes bounce {
+  @keyframes loading4keyframes {
     0%, 100% {
       transform: scale(0.0);
       -webkit-transform: scale(0.0);

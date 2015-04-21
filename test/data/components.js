@@ -22,5 +22,13 @@ var component_list = {
     loading6:{
         compatibility : null,
         line : '20'
+    },
+    loading7:{
+        compatibility : null,
+        line : '1'
+    },
+    loading8:{
+        compatibility : null,
+        line : '3'
     }
 }; 

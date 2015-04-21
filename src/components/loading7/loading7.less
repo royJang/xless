@@ -1,0 +1,29 @@
+.loading7 (){
+  border:5px solid #ccc;
+  border-left-color:@blue;
+  .square(60px);
+  background: #fff;
+  .border-radius(50%);
+  .animation-fill-mode(both);
+  .animation-duration(.7s);
+  &:extend(.infinite);
+  .animation-name(loading7keyframes);
+  .animation-timing-function(linear);
+
+  @-webkit-keyframes loading7keyframes {
+    from {
+      -webkit-transform: rotateZ(0turn);
+    }
+    to {
+      -webkit-transform: rotateZ(1turn);
+    }
+  }
+  @keyframes loading7keyframes{
+    from {
+      .transform(rotateZ(0turn));
+    }
+    to {
+      .transform(rotateZ(1turn));
+    }
+  }
+}

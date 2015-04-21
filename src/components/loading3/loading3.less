@@ -16,7 +16,7 @@
     .animation-fill-mode(both);
     .animation-duration(2s);
     &:extend(.infinite);
-    .animation-name(zoomLoading);
+    .animation-name(loading3keyframes);
     .animation-timing-function(ease-in-out);
   }
 
@@ -25,12 +25,12 @@
     animation-delay: -1.0s;
   }
 
-  @-webkit-keyframes zoomLoading {
+  @-webkit-keyframes loading3keyframes {
     0%, 100% { .transform(scale(0.0)) }
     50% { .transform(scale(1.0))}
   }
 
-  @keyframes zoomLoading {
+  @keyframes loading3keyframes {
     0%, 100% { .transform(scale(0.0)) }
     50% { .transform(scale(1.0))}
   }

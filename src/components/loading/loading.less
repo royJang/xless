@@ -14,7 +14,7 @@
     .animation-fill-mode(both);
     .animation-duration(1.2s);
     &:extend(.infinite);
-    .animation-name(xlessLoading);
+    .animation-name(loading1keyframes);
     .animation-timing-function(ease-in-out);
 
     &:nth-child(2){
@@ -35,12 +35,12 @@
     }
   }
 
-  @-webkit-keyframes xlessLoading {
+  @-webkit-keyframes loading1keyframes {
     0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
     20% { -webkit-transform: scaleY(1.0) }
   }
 
-  @keyframes xlessLoading {
+  @keyframes loading1keyframes {
     0%, 40%, 100% {
       .transform(scaleY(0.4));
     }20% {

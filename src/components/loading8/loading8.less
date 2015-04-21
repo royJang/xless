@@ -1,0 +1,51 @@
+.loading8 (){
+
+  width:40px; height:50px; border:5px solid #ccc;
+  .border-radius(5px); .posr;
+
+  >div {
+    .square(10px); background: #aaa; .posa;
+    left:-7px; top:-7px;
+    .border-radius(15px);
+    .animation-fill-mode(both);
+    .animation-duration(3s);
+    &:extend(.infinite);
+    .animation-name(loading8keyframes);
+    .animation-timing-function(linear);
+  }
+
+  @-webkit-keyframes loading8keyframes {
+    0% {
+      left:-7px; top:-7px;
+    }
+    25%{
+      left:-7px; top:37px;
+    }
+    50%{
+      left:27px; top:37px;
+    }
+    75%{
+      left:27px; top:-7px;
+    }
+    100%{
+      left:-7px; top:-7px;
+    }
+  }
+  @keyframes loading8keyframes{
+    0% {
+      left:-7px; top:-7px;
+    }
+    25%{
+      left:-7px; top:37px;
+    }
+    50%{
+      left:27px; top:37px;
+    }
+    75%{
+      left:27px; top:-7px;
+    }
+    100%{
+      left:-7px; top:-7px;
+    }
+  }
+}

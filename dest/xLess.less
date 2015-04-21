@@ -3835,7 +3835,7 @@
     .animation-fill-mode(both);
     .animation-duration(1.2s);
     &:extend(.infinite);
-    .animation-name(xlessLoading);
+    .animation-name(loading1keyframes);
     .animation-timing-function(ease-in-out);
 
     &:nth-child(2){
@@ -3856,12 +3856,12 @@
     }
   }
 
-  @-webkit-keyframes xlessLoading {
+  @-webkit-keyframes loading1keyframes {
     0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
     20% { -webkit-transform: scaleY(1.0) }
   }
 
-  @keyframes xlessLoading {
+  @keyframes loading1keyframes {
     0%, 40%, 100% {
       .transform(scaleY(0.4));
     }20% {
@@ -3879,16 +3879,16 @@
   .animation-fill-mode(both);
   .animation-duration(1.2s);
   &:extend(.infinite);
-  .animation-name(xlessRectFlipLoading);
+  .animation-name(loading2keyframes);
   .animation-timing-function(ease-in-out);
 
-  @-webkit-keyframes xlessRectFlipLoading {
+  @-webkit-keyframes loading2keyframes {
     0% { -webkit-transform: perspective(120px) }
     50% { -webkit-transform: perspective(120px) rotateY(180deg) }
     100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
   }
 
-  @keyframes xlessRectFlipLoading {
+  @keyframes loading2keyframes {
     0% {
       transform: perspective(120px) rotateX(0deg) rotateY(0deg);
       -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
@@ -3920,7 +3920,7 @@
     .animation-fill-mode(both);
     .animation-duration(2s);
     &:extend(.infinite);
-    .animation-name(zoomLoading);
+    .animation-name(loading3keyframes);
     .animation-timing-function(ease-in-out);
   }
 
@@ -3929,12 +3929,12 @@
     animation-delay: -1.0s;
   }
 
-  @-webkit-keyframes zoomLoading {
+  @-webkit-keyframes loading3keyframes {
     0%, 100% { .transform(scale(0.0)) }
     50% { .transform(scale(1.0))}
   }
 
-  @keyframes zoomLoading {
+  @keyframes loading3keyframes {
     0%, 100% { .transform(scale(0.0)) }
     50% { .transform(scale(1.0))}
   }
@@ -3956,8 +3956,8 @@
     background-color: #67CF22;
     border-radius: 100%;
 
-    -webkit-animation: bounce 2.0s infinite ease-in-out;
-    animation: bounce 2.0s infinite ease-in-out;
+    -webkit-animation: loading4keyframes 2.0s infinite ease-in-out;
+    animation: loading4keyframes 2.0s infinite ease-in-out;
   }
 
   >div:nth-child(2) {
@@ -3970,12 +3970,12 @@
   @-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
   @keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
 
-  @-webkit-keyframes bounce {
+  @-webkit-keyframes loading4keyframes {
     0%, 100% { -webkit-transform: scale(0.0) }
     50% { -webkit-transform: scale(1.0) }
   }
 
-  @keyframes bounce {
+  @keyframes loading4keyframes {
     0%, 100% {
       transform: scale(0.0);
       -webkit-transform: scale(0.0);
@@ -3997,8 +3997,8 @@
 
     border-radius: 100%;
     display: inline-block;
-    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
-    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation: loading5keyframes 1.4s infinite ease-in-out;
+    animation: loading5keyframes 1.4s infinite ease-in-out;
     /* Prevent first frame from flickering when animation starts */
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
@@ -4014,12 +4014,12 @@
     }
   }
 
-  @-webkit-keyframes bouncedelay {
+  @-webkit-keyframes loading5keyframes {
     0%, 80%, 100% { -webkit-transform: scale(0.0) }
     40% { -webkit-transform: scale(1.0) }
   }
 
-  @keyframes bouncedelay {
+  @keyframes loading5keyframes {
     0%, 80%, 100% {
       transform: scale(0.0);
       -webkit-transform: scale(0.0);
@@ -4041,8 +4041,8 @@
 
     border-radius: 100%;
     position: absolute;
-    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
-    animation: bouncedelay 1.2s infinite ease-in-out;
+    -webkit-animation: loading6keyframes 1.2s infinite ease-in-out;
+    animation: loading6keyframes 1.2s infinite ease-in-out;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
   }
@@ -4123,12 +4123,12 @@
     animation-delay: -0.1s;
   }
 
-  @-webkit-keyframes bouncedelay {
+  @-webkit-keyframes loading6keyframes {
     0%, 80%, 100% { -webkit-transform: scale(0.0) }
     40% { -webkit-transform: scale(1.0) }
   }
 
-  @keyframes bouncedelay {
+  @keyframes loading6keyframes {
     0%, 80%, 100% {
       transform: scale(0.0);
       -webkit-transform: scale(0.0);
@@ -4136,5 +4136,85 @@
         transform: scale(1.0);
         -webkit-transform: scale(1.0);
       }
+  }
+}
+.loading7 (){
+  border:5px solid #ccc;
+  border-left-color:@blue;
+  .square(60px);
+  background: #fff;
+  .border-radius(50%);
+  .animation-fill-mode(both);
+  .animation-duration(.7s);
+  &:extend(.infinite);
+  .animation-name(loading7keyframes);
+  .animation-timing-function(linear);
+
+  @-webkit-keyframes loading7keyframes {
+    from {
+      -webkit-transform: rotateZ(0turn);
+    }
+    to {
+      -webkit-transform: rotateZ(1turn);
+    }
+  }
+  @keyframes loading7keyframes{
+    from {
+      .transform(rotateZ(0turn));
+    }
+    to {
+      .transform(rotateZ(1turn));
+    }
+  }
+}
+.loading8 (){
+
+  width:40px; height:50px; border:5px solid #ccc;
+  .border-radius(5px); .posr;
+
+  >div {
+    .square(10px); background: #aaa; .posa;
+    left:-7px; top:-7px;
+    .border-radius(15px);
+    .animation-fill-mode(both);
+    .animation-duration(3s);
+    &:extend(.infinite);
+    .animation-name(loading8keyframes);
+    .animation-timing-function(linear);
+  }
+
+  @-webkit-keyframes loading8keyframes {
+    0% {
+      left:-7px; top:-7px;
+    }
+    25%{
+      left:-7px; top:37px;
+    }
+    50%{
+      left:27px; top:37px;
+    }
+    75%{
+      left:27px; top:-7px;
+    }
+    100%{
+      left:-7px; top:-7px;
+    }
+  }
+  @keyframes loading8keyframes{
+    0% {
+      left:-7px; top:-7px;
+    }
+    25%{
+      left:-7px; top:37px;
+    }
+    50%{
+      left:27px; top:37px;
+    }
+    75%{
+      left:27px; top:-7px;
+    }
+    100%{
+      left:-7px; top:-7px;
+    }
   }
 }
