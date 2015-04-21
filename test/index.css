@@ -3339,7 +3339,6 @@
   border-left-color: #336699;
   width: 60px;
   height: 60px;
-  background: #fff;
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -3378,7 +3377,7 @@
 .xless-loading8 > div {
   width: 10px;
   height: 10px;
-  background: #aaa;
+  background: #dd4c37;
   position: absolute;
   left: -7px;
   top: -7px;
