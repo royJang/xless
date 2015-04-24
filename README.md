@@ -31,9 +31,7 @@ If you have any questions, please feel free to ask on the royjang.github.com/xle
 
 ### MIT License
 ###
-The MIT License (MIT)
-
-Copyright (c) <2015> <xless [xless](http://royJang.github.io/xless)>
+The MIT License (MIT) copyright (c) <2015> [xless](http://royjang.github.io/xless/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
