@@ -29,7 +29,7 @@ ex : `<div class="animated xless-bounce"></div>`
 ###
 If you have any questions, please feel free to ask on the royjang.github.com/xless/issue
 
-### MIT License
+### License
 ###
 The MIT License (MIT) copyright (c) <2015> [xless](http://royjang.github.io/xless/)
 
